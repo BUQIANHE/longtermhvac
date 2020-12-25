@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>news</title>
+  <!--  css link-->
+  <link rel="stylesheet" href="css/main.min.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+  <!--  js link-->
+  <script src="js/jquery-1.9.12.min.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/other.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+</head>
+<body>
+  <!--  header -->
+  <header class="hd">
+    <div class="inner_hd hei">
+      <div class="pc_nav_box hei" v-if="screenWidth >= 767">
+        <ul class="top_nav flex-sb wid">
+          <li class="top_nav_list list_logo">
+            <a href="index.html" class="logo"><img src="assets/images/logo.jpg" alt="logo"></a>
+          </li>
+          <li class="topp_nav_list list_form">
+            <form action="" class="flex-sb">
+              <input type="text" placeholder="What are you looking for..." name="keys" id="search_key">
+              <button class="search_ico"><i class="iconfont iconsearch"></i></button>
+            </form>
+          </li>
+          <li class="top_nav_list flex-sb list_items">
+            <a href="login.html" class="ico_list"><i class="iconfont iconsvg-13"></i><span class="icon_txt">Login</span></a>
+            <a href="ike.html" class="ico_list"><i class="iconfont iconheart-o"></i><span class="icon_txt">Wish list</span></a>
+            <a href="cart.html" class="ico_list"><i class="iconfont iconcart"></i><span class="icon_txt">Cart</span></a>
+          </li>
+          <li class="top_nav_list mob_ico"><i class="iconfont icon-menu"></i></li>
+        </ul>
+        <ul class="top_nemu flex-sb wid">
+          <li class="top_menu_list flex-sb cate_items">
+            <i class="iconfont iconcaidan"></i>
+            <a class="cate">Categories</a>
+            <i class="iconfont iconangle-down"></i>
+            <ul class="cls_items">
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Refrigeration Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Air Conditioner</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Ventilation System</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Heating Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Assembly Supplies</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Tools and Equipment</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Miscellaneous</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">All Categories</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu_list flex-sb inner_pg">
+            <a href="" class="list_pg">Buying on Unitecool</a>
+            <a href="" class="list_pg">Sell on Unitecool</a>
+            <a href="" class="list_pg">News & Events</a>
+            <a href="" class="list_pg">Help Center</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile_nav_box" v-cloak v-else>
+        <ul class="mob_nav_items flex-sb hei wid">
+          <li class="mob_nav_list flex hei categories">
+            <i class="iconfont iconmenu"></i>
+            <!-- <a class="mob_nav_txt">Categories</a> -->
+
+            <ul class="cls_items">
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Refrigeration Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Air Conditioner</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central</a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Ventilation System</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Heating Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Assembly Supplies</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Tools and Equipment</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Miscellaneous</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">All Categories</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="mob_nav_list list_logo hei">
+            <a href="index.html" class="logo flex"><img src="assets/images/logo.jpg" alt="logo"></a>
+          </li>
+          <li class="mob_nav_list flex hei page_menu">
+            <!-- <a class="mob_nav_txt">Menu</a> -->
+            <i class="iconfont iconmenu1"></i>
+
+            <ul class="page_items cls_items">
+              <li class="user_cart list_items flex-sb">
+                <a href="login.html" class="ico_list"><i class="iconfont iconsvg-13"></i><span class="icon_txt">Login</span></a>
+                <a href="ike.html" class="ico_list"><i class="iconfont iconheart-o"></i><span class="icon_txt">Wish list</span></a>
+                <a href="cart.html" class="ico_list"><i class="iconfont iconcart"></i><span class="icon_txt">Cart</span></a>
+              </li>
+              <li class="page_list inner_pg">
+                <a href="" class="list_pg">Buying on Unitecool</a>
+                <a href="" class="list_pg">Sell on Unitecool</a>
+                <a href="" class="list_pg">News & Events</a>
+                <a href="" class="list_pg">Help Center</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+  
+        <div class="mob_search list_form hei wid">
+          <form action="" class="flex-sb">
+            <input type="text" placeholder="What are you looking for..." name="keys" id="search_key">
+            <button class="search_ico"><i class="iconfont iconsearch"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- road nav  -->
+  <div class="road_nav wid flex">
+    <a href="index.html" class="home">Home</a>
+    <i class="iconfont iconangle-right"></i>
+    <span class="road_pro_name">products</span>
+  </div>
+
+
+  <!-- product detail content -->
+  <main class="pro_det wid">
+    <ul class="pro_pic_info flex-sb">
+      <li class="pic_info_list left_pic">
+        <a class="big_pic"><img src="assets/images/pro_det1.png" alt=""></a>
+        <div class="small_pic_box flex">
+          <a class="small_pic current"><img src="assets/images/pro_det1.png" alt=""></a>
+          <a class="small_pic"><img src="assets/images/pro_det2.png" alt=""></a>
+        </div>
+      </li>
+      <li class="pic_info_list right_infos">
+        <div class="info_hd">
+          <h4 class="pro_name">High Quality Copper Pipe Electric Flaring Tool copper tube fast accurate single head small space </h4>
+          <p class="tit_desc">FOB <span class="fob">Reference</span>  Price: <span class="get">Get Latest Price</span></p>
+        </div>
+        <div class="pro_price_info flex">
+          <h3 class="pro_price">$<span>54.60</span> - $<span>199.80</span></h3>&nbsp;&nbsp;
+          <p class="pro_price_sets flex"> / Set丨<span>5 Set/Sets</span>&nbsp;(Min. Order)</p>
+        </div>
+        <ul class="info_table">
+          <li class="table_list flex">
+            <span class="type">Type:</span>
+            <p class="other"><span>Other</span></p>
+          </li>
+          <li class="table_list flex">
+            <span class="lead_time">Lead Time:</span>
+            <div class="lead_box">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Quantity(Sets)</td>
+                    <td>1 - 5</td>
+                    <td>>5</td>
+                  </tr>
+                  <tr>
+                    <td>Est. Time(days)</td>
+                    <td>30</td>
+                    <td>Negotiable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+        </ul>
+        <p class="customization">
+          Customization: <span>Customized Packaging </span> (Min. Order:1000 sets)
+        </p>
+        <p class="trade_ass flex">
+          <svg class="icbu-icon-svg ta-link-item icon-ta" width="16" height="16" viewBox="0 0 64 64">
+            <path fill-rule="evenodd" clip-rule="evenodd" fill="#FACE32" d="M52.268 5.564V14.5h-9.784V2.637L32 0 21.516 2.636V14.5h-9.784V5.565L1.592 8.65l2.644 46.703L32 64l27.764-8.647L62.408 8.65z"></path>
+            <path fill="#FFF" d="M35.643 40.64c0-1.067-.33-1.934-.993-2.603-.66-.668-1.808-1.29-3.438-1.866-2.635-.893-4.587-1.948-5.856-3.16s-1.902-2.918-1.902-5.112c0-2.084.61-3.766 1.83-5.047 1.218-1.28 2.906-2.05 5.064-2.307v-4.008h2.942v4.044c2.145.318 3.797 1.203 4.955 2.656 1.16 1.453 1.738 3.423 1.738 5.91h-4.45c0-1.568-.338-2.79-1.012-3.667-.673-.877-1.623-1.316-2.85-1.316-1.274 0-2.217.328-2.83.984-.614.656-.92 1.56-.92 2.712 0 1.078.32 1.94.956 2.583s1.826 1.272 3.567 1.885c2.635.944 4.572 2.013 5.81 3.208 1.238 1.196 1.857 2.884 1.857 5.066 0 2.157-.635 3.858-1.904 5.102s-3.037 1.982-5.304 2.216v3.584H29.98v-3.567c-2.233-.233-4.05-1.02-5.454-2.362-1.403-1.343-2.105-3.374-2.105-6.095h4.47c0 1.777.42 3.03 1.26 3.76.84.73 1.908 1.094 3.208 1.094 1.385 0 2.445-.325 3.18-.975.738-.65 1.105-1.556 1.105-2.72z"></path>
+          </svg>
+          <a href=""><b>Trade Assurance </b> </a> &nbsp;protects your Alibaba.com orders
+        </p>
+        <div class="payment_box">
+          <p class="payments flex">
+            <span>Payments:</span>
+            <a href="" class="paypal">
+              <svg viewBox="0 0 4220 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10687" xmlns:xlink="http://www.w3.org/1999/xlink" width="80px";>
+                <path d="M3249.722604 229.409369h-232.537679c-15.641548 0-29.197556 11.470468-32.325865 27.112016l-93.849287 595.421589c-2.08554 11.470468 7.299389 21.898167 18.769857 21.898167h118.875764c11.470468 0 20.855397-8.342159 21.898167-18.769858l27.112016-168.928717c2.08554-15.641548 15.641548-27.112016 32.325866-27.112016h72.99389c153.287169 0 240.879837-74.03666 263.820774-221.06721 10.427699-63.608961 0-114.704684-29.197556-150.158859-31.283096-38.582485-89.678208-58.395112-167.885947-58.395112z m27.112016 216.89613c-12.513238 83.421589-76.1222 83.421589-137.645621 83.421589h-35.454175l25.026476-155.372709c1.04277-9.384929 9.384929-16.684318 18.769858-16.684318h15.641547c41.710794 0 81.336049 0 102.191447 23.983707 12.513238 14.598778 15.641548 35.454175 11.470468 64.651731z" fill="#009CDE" p-id="10688"></path>
+                <path d="M1594.84684 229.409369h-232.537678c-15.641548 0-29.197556 11.470468-32.325866 27.112016l-93.849287 595.421589c-2.08554 11.470468 7.299389 21.898167 18.769857 21.898167h110.533605c15.641548 0 29.197556-11.470468 32.325866-27.112017l25.026476-160.586558c2.08554-15.641548 15.641548-27.112016 32.325866-27.112016h72.99389c153.287169 0 240.879837-74.03666 263.820774-221.06721 10.427699-63.608961 0-114.704684-29.197556-150.158859-31.283096-38.582485-89.678208-58.395112-167.885947-58.395112z m27.112016 216.89613c-12.513238 83.421589-76.1222 83.421589-137.645621 83.421589h-35.454175l25.026476-155.372709c1.04277-9.384929 9.384929-16.684318 18.769858-16.684318h15.641548c41.710794 0 81.336049 0 102.191446 23.983707 12.513238 14.598778 15.641548 35.454175 11.470468 64.651731zM2288.288795 443.177189h-111.576375c-9.384929 0-17.727088 7.299389-18.769857 16.684318l-5.213849 31.283096-7.299389-11.470469c-23.983707-34.411405-77.164969-46.924644-131.389002-46.924643-123.046843 0-227.323829 92.806517-248.179226 223.152749-10.427699 64.651731 4.171079 127.217923 41.710794 171.014257 34.411405 39.625255 82.378819 56.309572 139.731161 56.309572 99.063136 0 153.287169-63.608961 153.287169-63.608961l-5.21385 31.283096c-2.08554 11.470468 7.299389 21.898167 18.769858 21.898167h100.105906c15.641548 0 29.197556-11.470468 32.325866-27.112017l60.480652-380.610998c2.08554-10.427699-6.256619-21.898167-18.769858-21.898167z m-154.329939 216.896131c-10.427699 63.608961-61.523422 106.362525-125.132383 106.362525-32.325866 0-58.395112-10.427699-75.079429-30.240326-16.684318-19.812627-22.940937-46.924644-17.727088-78.207739 10.427699-62.566191 61.523422-107.405295 124.089613-107.405295 31.283096 0 57.352342 10.427699 74.03666 30.240326 17.727088 20.855397 25.026477 47.967413 19.812627 79.250509z" fill="#003087" p-id="10689"></path>
+                <path d="M3943.164559 443.177189h-111.576375c-9.384929 0-17.727088 7.299389-18.769857 16.684318l-5.21385 31.283096-7.299389-11.470469c-23.983707-34.411405-77.164969-46.924644-131.389002-46.924643-123.046843 0-227.323829 92.806517-248.179226 223.152749-10.427699 64.651731 4.171079 127.217923 41.710795 171.014257 34.411405 39.625255 82.378819 56.309572 139.73116 56.309572 99.063136 0 153.287169-63.608961 153.28717-63.608961l-5.21385 31.283096c-2.08554 11.470468 7.299389 21.898167 18.769858 21.898167h100.105906c15.641548 0 29.197556-11.470468 32.325866-27.112017l60.480651-380.610998c2.08554-10.427699-6.256619-21.898167-18.769857-21.898167z m-154.329939 216.896131c-10.427699 63.608961-61.523422 106.362525-125.132383 106.362525-32.325866 0-58.395112-10.427699-75.07943-30.240326-16.684318-19.812627-22.940937-46.924644-17.727087-78.207739 10.427699-62.566191 61.523422-107.405295 124.089613-107.405295 31.283096 0 57.352342 10.427699 74.03666 30.240326 17.727088 20.855397 25.026477 47.967413 19.812627 79.250509z" fill="#009CDE" p-id="10690"></path>
+                <path d="M2880.582074 443.177189h-111.576375c-10.427699 0-20.855397 5.213849-27.112016 14.598778l-154.329939 227.323829-65.694501-217.9389c-4.171079-13.556008-16.684318-22.940937-31.283096-22.940937h-109.490835c-13.556008 0-22.940937 13.556008-18.769857 26.069247l123.046843 360.79837-115.747454 162.672098c-9.384929 12.513238 0 30.240326 15.641548 30.240326h111.576375c10.427699 0 20.855397-5.213849 26.069246-13.556008l371.226069-535.983707c11.470468-13.556008 2.08554-31.283096-13.556008-31.283096z" fill="#003087" p-id="10691"></path>
+                <path d="M4074.553561 245.050916l-94.892057 605.849288c-2.08554 11.470468 7.299389 21.898167 18.769857 21.898167h95.934827c15.641548 0 29.197556-11.470468 32.325866-27.112017l93.849287-595.421588c2.08554-11.470468-7.299389-21.898167-18.769857-21.898167h-107.405296c-10.427699 1.04277-18.769857 7.299389-19.812627 16.684317z" fill="#009CDE" p-id="10692"></path>
+                <path d="M782.529121 259.649695c12.513238-79.250509 0-133.474542-42.753564-182.484726C691.808143 22.940937 606.301015 0 496.81018 0H178.765374c-21.898167 0-41.710794 16.684318-44.839104 38.582485L0.451728 879.05499c-3.12831 16.684318 10.427699 31.283096 27.112016 31.283096h196.040733l-13.556008 85.507128c-2.08554 14.598778 9.384929 27.112016 23.983707 27.112016h165.800407c19.812627 0 36.496945-14.598778 39.625255-33.368635l2.08554-8.342159 31.283095-198.126273 2.08554-10.427699c3.12831-19.812627 19.812627-33.368635 39.625255-33.368635h25.026476c160.586558 0 285.718941-64.651731 322.215886-253.393075 15.641548-79.250509 7.299389-144.94501-33.368635-190.826884-12.513238-13.556008-28.154786-26.069246-45.881874-35.454175" fill="#009CDE" p-id="10693"></path>
+                <path d="M782.529121 259.649695c12.513238-79.250509 0-133.474542-42.753564-182.484726C691.808143 22.940937 606.301015 0 496.81018 0H178.765374c-21.898167 0-41.710794 16.684318-44.839104 38.582485L0.451728 879.05499c-3.12831 16.684318 10.427699 31.283096 27.112016 31.283096h196.040733l49.010184-312.830958-1.04277 9.384929c3.12831-21.898167 21.898167-38.582485 44.839104-38.582485h93.849287c183.527495 0 327.429735-74.03666 369.140529-289.89002l3.12831-18.769857" fill="#012169" p-id="10694"></path>
+                <path d="M326.838693 260.692464c2.08554-13.556008 10.427699-23.983707 21.898167-30.240326 5.213849-2.08554 11.470468-4.171079 16.684318-4.171079h250.264766c29.197556 0 57.352342 2.08554 82.378819 6.256619 7.299389 1.04277 14.598778 2.08554 20.855397 4.17108 7.299389 1.04277 13.556008 3.12831 19.812627 5.213849l9.384929 3.128309c12.513238 4.171079 23.983707 9.384929 34.411405 14.598779 12.513238-79.250509 0-133.474542-42.753564-182.484726C691.808143 22.940937 606.301015 0 496.81018 0H178.765374c-21.898167 0-41.710794 16.684318-44.839104 38.582485L0.451728 879.05499c-3.12831 16.684318 10.427699 31.283096 27.112016 31.283096h196.040733l49.010184-312.830958L326.838693 260.692464z" fill="#003087" p-id="10695"></path>
+              </svg>
+            </a>
+          </p>
+          <p class="web_url flex">
+            <a href="">Alibaba.com Logistics</a>
+            <a href="">Inspection Solutions</a>
+          </p>
+        </div>
+        <div class="det_btns flex">
+          <a href="cart.html" class="iconfont iconcart">Shopping Cart</a>
+          <a href="" class="iconfont iconheart-o">Collect</a>
+        </div>
+      </li>
+    </ul>
+    <section class="sel_pro_detail">
+      <h4>PRODUCT DESCRIPTION</h4>
+      <div class="sel_pro_det">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, hic odio! Blanditiis, saepe, deserunt molestiae veniam nesciunt modi magni eum, quam autem excepturi id odit! Unde, odit incidunt atque, accusamus cum sunt voluptatibus facilis dicta quisquam omnis error dolorem nam ratione nihil ipsam ea qui tempore consequuntur blanditiis sed sapiente. Cupiditate quasi, sed eaque natus laborum alias repellendus quibusdam perferendis, ipsum velit doloremque soluta quos vel architecto blanditiis odio nihil modi rerum error officia nisi quidem dolor? At saepe, accusamus libero alias quidem voluptatibus inventore voluptatum animi illo vero vel distinctio doloremque, dolorum, ipsam officia corrupti? Accusantium ducimus repellendus expedita eligendi magni. Dolores aliquam, labore dicta a fugiat error nulla ipsa, temporibus neque voluptatem fugit obcaecati pariatur voluptatum eaque at, assumenda totam numquam voluptas amet vitae. Suscipit, mollitia quisquam unde illo saepe rerum repellendus ab. Esse illo suscipit temporibus dolor, facere ab autem sed aliquid omnis, ipsa vel iusto harum nobis et. Modi ad quidem porro cumque facere labore, accusamus excepturi quae molestias nam odio ducimus earum vitae odit ipsam quasi explicabo libero, veniam qui? Blanditiis aut laboriosam quis hic doloremque repellendus, vel rerum nostrum deleniti dolorum minima pariatur officiis repellat vero aliquid, natus quia beatae odio nihil itaque.</p>
+        <ul class="det_desc_items">
+          <li class="det_desc_list">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+          <li class="det_desc_list">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+          <li class="det_desc_list">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+          <li class="det_desc_list">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+          <li class="det_desc_list">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+          <li class="det_desc_list">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+          <li class="det_desc_list">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
+        </ul>
+
+        <a href=""><b>Lorem ipsum dolor sit amet consectetur.</b></a>
+        <div class="lime_org">
+          <h5>Lorem, ipsum.</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores a vero beatae commodi pariatur?</p>
+          <h5>Lorem, ipsum.</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores a vero beatae commodi pariatur?</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <section class="account_wish">
+    <ul class="aw_items wid">
+      <div class="aw_inner flex-sb">
+        <a href="" class="aw_list flex">
+          <i class="iconfont iconsvg-12"></i>
+          <div class="ico_info">
+            <h6>Help Center</h6>
+            <p>Ask questions & get instant answers</p>
+          </div>
+        </a>
+        <a href="login.html" class="aw_list flex">
+          <i class="iconfont iconsvg-13"></i>
+          <div class="ico_info">
+            <h6>My Account</h6>
+            <p>Manage your information & settings</p>
+          </div>
+        </a>
+        <a href="" class="aw_list flex">
+          <i class="iconfont iconheart-o"></i>
+          <div class="ico_info">
+            <h6>Wish List</h6>
+            <p>Tell everyone what you want</p>
+          </div>
+        </a>
+      </div>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <ul class="footer_items flex-sb wid">
+      <li class="foot_list">
+        <h4 class="foot_tit">NEWSLETTER</h4>
+        <p>Join beiduo lovers and get our latest parts <br>& resources sent right to your inbox. </p>
+        <form action="">
+          <input type="text" name="newsletter_name"  placeholder="Your name">
+          <input type="text" name="newsletter_email" placeholder="Your email">
+          <button class="newsletter_btn">SUBMIT</button>
+        </form>
+        <div class="social_link">
+          <a href=""><i class="iconfont iconfacebook"></i></a>
+          <a href=""><i class="iconfont icontwitter"></i></a>
+          <a href=""><i class="iconfont iconlinkedin-square"></i></a>
+          <a href=""><i class="iconfont iconinstagram"></i></a>
+          <a href=""><i class="iconfont iconpinterest-p"></i></a>
+        </div>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">Buying on Unitecool</h4>
+        <a href="">Post Buying Leads</a>
+        <a href="">For Buyers</a>
+        <a href="">New Users</a>
+        <a href="">Feedback</a>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">ABOUT UNITECOOL</h4>
+        <a href="">News & Events</a>
+        <a href="">About Unitecool</a>
+        <a href="">Contact Unitecool</a>
+        <a href="">Sitemap</a>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">Help Center</h4>
+        <a href="">Instructions </a>
+        <a href="">Rules & Policies</a>
+        <a href="">Guide</a>
+        <a href="">Activity</a>
+      </li>
+    </ul>
+  </footer>
+
+  <div class="copyright">
+    <ul class="cpy_items flex-sb wid">
+      <li class="cpy_list cpy_txt">Copyright © 2003-2020 UNITECOOL All rights reserved.</li>
+      <li class="cpy_list flex-sb">
+        <a href="">Privacy Policy</a>
+        <a href="" class="link_cent">Secure Shopping</a>
+        <a href="">XML</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+
+    /* ============= vue js ============= */
+    // header js
+    const mv = new Vue({
+
+      el: '.hd',
+
+      data: {
+        
+        screenWidth: document.body.clientWidth,
+
+      }
+
+    })
+  </script>
+
+</body>
+</html>

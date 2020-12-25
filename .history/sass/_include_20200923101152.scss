@@ -1,0 +1,218 @@
+@mixin ban{
+  @extend .self;
+  margin-right: 3%;
+  .short_desc,.desc{
+    color: $clr7;
+    font-size: $fs3;
+    @media screen and (max-width: 950px){
+      font-size: $fs;
+    }
+  }
+  .ban_tit{
+    margin: 6px 0;
+    font-size: $fs9;
+    color: $clr3;
+    @media screen and (max-width: 1440px){
+      font-size: $fs8;
+    }
+    @media screen and (max-width: 1150px){
+      font-size: $fs7;
+      @include br;
+    }
+  }
+  @media screen and (max-width: 767px){
+    margin: 20px 0!important;
+  }
+}
+
+@mixin six_box($fs_h5, $fs_p){
+  @include wrap;
+  justify-content: space-evenly;
+  padding: 3% 0 0;
+  .seo_list{
+    margin: 3% 0;
+    width: $wid7;
+    @include self;
+    @include cent;
+    @include flex;
+    flex-direction: column;
+    svg{
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    h5{
+      font-size: $fs_h5;
+      color: $clr3;
+      font-weight: 400;
+      margin: 10px 0;
+      @include anim1;
+    }
+    p{
+      color: $clr8;
+      font-size: $fs_p;
+      line-height: 1.8rem;
+      @media screen and (max-width: 1210px){
+        line-height: 1.4rem;
+      }
+      @media screen and (max-width: 1210px){
+        @include br;
+      }
+    }
+    .txt_box{
+      @include self;
+      @include flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    @media screen and (max-width: 600px){
+      width: $wid5;
+    }
+  }
+}
+
+@mixin seo_hd($color){
+  .seo_hd{
+    @extend .cen;
+    h3{
+      font-size: $fs8;
+      font-weight: 400;
+      color: $color;
+      margin-bottom: 1rem;
+      line-height: 5rem;
+      @media screen and (max-width: 1440px){
+        font-size: $fs7;
+        line-height: 3.5rem;
+      }
+      @media screen and (max-width: 850px){
+        @include br;
+      }
+      @media screen and (max-width: 767px){
+        font-size: $fs6;
+        line-height: 3rem;
+      }
+      @media screen and (max-width: 450px){
+        font-size: $fs5;
+        line-height: 2.5rem;
+      }
+    }
+    span{
+      font-size: $fs;
+      color: $clr6;
+      line-height: 1.5rem;
+      @media screen and (max-width: 850px){
+        @include br;
+      }
+      @media screen and (max-width: 450px){
+        font-size: $fs2;
+        line-height: 1.4rem;
+      }
+    }
+  }
+}
+
+@mixin btn1{
+  padding: 8px 28px;
+  background: $og1;
+  font-size: $fs2;
+  color: $wt;
+  @extend .rad1;
+}
+
+@mixin num_list($tclr, $tdc){
+  .time{
+    font-size: $fs1 + $fs6;
+    color: $tclr;
+  }
+  .time_desc{
+    font-size: $fs2;
+    color: $tdc;
+  }
+  @media screen and (max-width: 1000px){
+    .time{
+      font-size: $fs7;
+    }
+    
+  }
+}
+
+@mixin alert_desc($hfs, $pclr, $mbot){
+  h3{
+    font-size: $hfs;
+    font-weight: 400;
+    @media screen and (max-width: 1200px){
+      font-size: $hfs * 2 - $fs0 -$fs;
+    }
+    @media screen and (max-width: 767px){
+      font-size: $hfs - $fs5;
+    }
+  }
+  p{
+    font-size: $fs2;
+    line-height: 1.6rem;
+    letter-spacing: 1px;
+    color: $pclr;
+    @media screen and (max-width: 767px){
+      line-height: 1.4rem;
+    }
+  }
+  span{
+    display: block;
+    margin-bottom: $mbot;
+  }
+}
+
+@mixin num_pg($top, $color){
+  .directory{
+    @extend .abs;
+    top: $top;
+    left: 0;
+    font-size: $fs5;
+    color: $color;
+    span{
+      display: block;
+      margin: 0 auto;
+      margin-right: 0;
+      width: $wid5;
+      border-bottom: 1px solid $bu1;
+    }
+    p{
+      font-size: $fs;
+      margin-top: 6px;
+    }
+    @media screen and (max-width: 400px){
+      font-size: $fs3;
+      p{
+        font-size: $fs2;
+      }
+    }
+  }
+}
+
+
+// 自适应用的
+@mixin cent{
+  text-align: $cent;
+}
+@mixin wrap{
+  flex-wrap: wrap;
+}
+@mixin anim1{
+  transition: all .3s;
+}
+@mixin anim2{
+  transition: all .5s;
+}
+@mixin self{
+  align-self: normal;
+}
+@mixin br{
+  br{
+    display: none;
+  }
+}
+@mixin flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

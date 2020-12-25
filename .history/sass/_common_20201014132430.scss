@@ -1,0 +1,153 @@
+/* common css */
+ 
+// 弹性盒模型
+.flex_ai{
+  display: $flex;
+  align-items: $cen;
+}
+.jc{
+  justify-content: $cen;
+}
+
+.flex{
+  @extend .flex_ai;
+  @extend .jc;
+}
+.flex-sb{
+  @extend .flex_ai;
+  justify-content: space-between;
+}
+.flex-clo{
+  @extend .flex;
+  flex-direction: column;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.self{
+  align-self: normal;
+}
+
+// 字体大写
+.ttu{
+	text-transform: uppercase;
+}
+.ttc{
+  text-transform: capitalize;
+}
+
+// hover动画
+.anim{
+  transition: all .3s;
+}
+.anim2{
+  transition: all .5s;
+}
+
+// 定位
+.rel{
+  position: relative;
+}
+.abs{
+  position: absolute;
+}
+.fix{
+  position: fixed;
+}
+
+// 圆角
+.rad0{
+  border-radius: $wid3;
+}  // 圆
+.rad1{
+  border-radius: 4px;
+}
+.rad2{
+  border-radius: 6px;
+}
+.rad3{
+  border-right: 8px;
+}
+.rad4{
+  border-right: 10px;
+}
+.rad5{
+  border-radius: 100px;
+}
+
+// 文本溢出隐藏
+.fhd{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  display: -webkit-box;
+  /*!autoprefixer:off*/
+  -webkit-box-orient: vertical;
+  /*autoprefixer:on*/
+}
+.fhd1{
+  @extend .fhd;
+  -webkit-line-clamp: 1;
+}
+.fhd2{
+  @extend .fhd;
+  -webkit-line-clamp: 2;
+}
+.fhd3{
+  @extend .fhd;
+  -webkit-line-clamp: 3;
+}
+.fhd4{
+  @extend .fhd;
+  -webkit-line-clamp: 4;
+}
+.fhd5{
+  @extend .fhd;
+  -webkit-line-clamp: 5;
+}
+.fhd6{
+  @extend .fhd;
+  -webkit-line-clamp: 6;
+}
+.fhd7{
+  @extend .fhd;
+  -webkit-line-clamp: 7;
+}
+.fhd8{
+  @extend .fhd;
+  -webkit-line-clamp: 8;
+}
+
+
+
+.wid{
+  width: 1500px;
+  @extend .margin;
+  @media screen and (max-width: 1550px){
+    width: $wid1;
+  }
+}
+
+.margin{
+  margin: 0 auto;
+}
+
+.hei{
+  height: $width;
+}
+
+.none{
+  display: none;
+}
+
+.cen{
+  text-align: $cen;
+}
+
+.hand{
+  cursor: pointer;
+}
+
+.hide{
+  overflow: hidden;
+}

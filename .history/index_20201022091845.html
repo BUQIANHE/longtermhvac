@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNITCOOL</title>
+  <!--  css link-->
+  <link rel="stylesheet" href="css/main.min.css">
+  <!-- <link rel="stylesheet" href="css/style.css"> -->
+
+  <!--  js link-->
+  <script src="js/jquery-1.9.12.min.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/other.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+</head>
+<body>
+  <!--  header -->
+  <header class="hd">
+    <div class="inner_hd hei">
+      <div class="pc_nav_box hei" v-if="screenWidth >= 767">
+        <ul class="top_nav flex-sb wid">
+          <li class="top_nav_list list_logo">
+            <a href="index.html" class="logo"><img src="assets/images/logo.jpg" alt="logo"></a>
+          </li>
+          <li class="topp_nav_list list_form">
+            <form action="" class="flex-sb">
+              <input type="text" placeholder="What are you looking for..." name="keys" id="search_key">
+              <button class="search_ico"><i class="iconfont iconsearch"></i></button>
+            </form>
+          </li>
+          <li class="top_nav_list flex-sb list_items">
+            <a href="login.html" class="ico_list"><i class="iconfont iconsvg-13"></i><span class="icon_txt">Login</span></a>
+            <a href="ike.html" class="ico_list"><i class="iconfont iconheart-o"></i><span class="icon_txt">Wish list</span></a>
+            <a href="cart.html" class="ico_list"><i class="iconfont iconcart"></i><span class="icon_txt">Cart</span></a>
+          </li>
+          <li class="top_nav_list mob_ico"><i class="iconfont icon-menu"></i></li>
+        </ul>
+        <ul class="top_nemu flex-sb wid">
+          <li class="top_menu_list flex-sb cate_items">
+            <i class="iconfont iconcaidan"></i>
+            <a class="cate">Categories</a>
+            <i class="iconfont iconangle-down"></i>
+            <ul class="cls_items">
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Refrigeration Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Air Conditioner</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Ventilation System</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Heating Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Assembly Supplies</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Tools and Equipment</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Miscellaneous</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">All Categories</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu_list flex-sb inner_pg">
+            <a href="" class="list_pg">Buying on Unitecool</a>
+            <a href="" class="list_pg">Sell on Unitecool</a>
+            <a href="" class="list_pg">News & Events</a>
+            <a href="" class="list_pg">Help Center</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile_nav_box" v-else>
+        <ul class="mob_nav_items flex-sb hei wid">
+          <li class="mob_nav_list flex hei categories">
+            <i class="iconfont iconmenu"></i>
+            <!-- <a class="mob_nav_txt">Categories</a> -->
+
+            <ul class="cls_items">
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Refrigeration Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Air Conditioner</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central</a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Ventilation System</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Heating Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Assembly Supplies</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Tools and Equipment</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Miscellaneous</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">All Categories</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="mob_nav_list list_logo hei">
+            <a href="index.html" class="logo flex"><img src="assets/images/logo.jpg" alt="logo"></a>
+          </li>
+          <li class="mob_nav_list flex hei page_menu">
+            <!-- <a class="mob_nav_txt">Menu</a> -->
+            <i class="iconfont iconmenu1"></i>
+
+            <ul class="page_items cls_items">
+              <li class="user_cart list_items flex-sb">
+                <a href="login.html" class="ico_list"><i class="iconfont iconsvg-13"></i><span class="icon_txt">Login</span></a>
+                <a href="ike.html" class="ico_list"><i class="iconfont iconheart-o"></i><span class="icon_txt">Wish list</span></a>
+                <a href="cart.html" class="ico_list"><i class="iconfont iconcart"></i><span class="icon_txt">Cart</span></a>
+              </li>
+              <li class="page_list inner_pg">
+                <a href="" class="list_pg">Buying on Unitecool</a>
+                <a href="" class="list_pg">Sell on Unitecool</a>
+                <a href="" class="list_pg">News & Events</a>
+                <a href="" class="list_pg">Help Center</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+  
+        <div class="mob_search list_form hei wid">
+          <form action="" class="flex-sb">
+            <input type="text" placeholder="What are you looking for..." name="keys" id="search_key">
+            <button class="search_ico"><i class="iconfont iconsearch"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!--  search-->
+  <div class="search_box">
+    <div class="search_inner_box wid hei">
+      <form action="" class="search_form flex-sb hei">
+        <select name="" class="">
+          <option value="Products">Products</option>
+          <option value="Suppliers">Suppliers</option>
+          <option value="Buyers">Buyers</option>
+        </select>
+        <select name="" class="">
+          <option value="">Refrigeration Equipment</option>
+        </select>
+        <select name="" class="">
+          <option value="">SKY-1A07</option>
+        </select>
+        <input type="text" name="keywords" placeholder="Keywords search">
+        <button class="search_btn"><i class="iconfont iconsearch1"></i><span class="btn_txt ttu">Search</span></button>
+        <button class="share_btn"><i class="iconfont iconfenxiang_2"></i><span class="btn_txt ttu">Post Buying Lead</span></button>
+      </form>
+    </div>
+  </div>
+
+  <!--  banner-->
+  <section class="banner_swiper_box" id="banner_box">
+    <!-- banner slider -->
+    <div class="swiper-container-ban">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="" class="ban_pic">
+            <img src="assets/images/in_ban.jpg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="" class="ban_pic">
+            <img src="assets/images/in_ban.jpg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="" class="ban_pic">
+            <img src="assets/images/in_ban.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="swiper-container-ban" v-else>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="" class="ban_pic">
+            <img src="assets/images/in_ban.jpg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="" class="ban_pic">
+            <img src="assets/images/in_ban.jpg" alt="">
+          </a>
+        </div>
+      </div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <a href="" class="ban_pic">
+            <img src="assets/images/in_ban.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div> -->
+    <!-- Add Pagination -->
+    <div class="swiper-pagination-ban flex"></div>
+
+  </section>
+
+  <section class="pros_trade wid flex-sb">
+    <ul class="model_list pro_cls">
+      <h4 class="model_tit cls_tit">MY PRODUCTS</h4>
+      <div class="cls_items">
+        <li class="ml_list pro_cls_items">
+          <i class="iconfont iconcold custom_ico"></i>
+          <a href="" class="cls_txt">Refrigeration Equipment</a>
+          <i class="iconfont iconangle-right"></i>
+        </li>
+        <li class="ml_list pro_cls_items">
+          <i class="iconfont iconsvg-05 custom_ico"></i>
+          <a href="" class="cls_txt">Air Conditioner</a>
+          <i class="iconfont iconangle-right"></i>
+          <div class="pro_cls_dp">
+            <a href="">Central        </a>
+            <a href="">Air-conditionerResidential</a>
+            <a href="">Air-conditionerCommercial</a>
+            <a href="">Air-conditionerInverter</a>
+            <a href="">Air-conditionerComputer</a>
+            <a href="">Room Air ConditioningSpecial</a>
+            <a href="">Air-conditionerClean</a>
+            <a href="">Air-conditionerThermostatic</a>
+            <a href="">Conditioner Parts</a>
+            <a href="">Air-conditionerComputer</a>
+            <a href="">Room Air ConditioningSpecial</a>
+            <a href="">Air-conditionerClean</a>
+            <a href="">Air-conditionerThermostatic</a>
+            <a href="">Conditioner Parts</a>
+          </div>
+        </li>
+        <li class="ml_list pro_cls_items">
+          <i class="iconfont iconsvg-06 custom_ico"></i>
+          <a href="" class="cls_txt">Ventilation System</a>
+          <i class="iconfont iconangle-right"></i>
+        </li>
+        <li class="ml_list pro_cls_items">
+          <i class="iconfont iconsvg-02 custom_ico"></i>
+          <a href="" class="cls_txt">Heating Equipment</a>
+          <i class="iconfont iconangle-right"></i>
+        </li>
+        <li class="ml_list pro_cls_items">
+          <i class="iconfont iconsvg-03 custom_ico"></i>
+          <a href="" class="cls_txt">Assembly Supplies</a>
+          <i class="iconfont iconangle-right"></i>
+        </li>
+        <li class="ml_list pro_cls_items">
+          <i class="iconfont iconsvg-07 custom_ico"></i>
+          <a href="" class="cls_txt">Tools and Equipment</a>
+          <i class="iconfont iconangle-right"></i>
+          <div class="pro_cls_dp">
+            <a href="">Central        </a>
+            <a href="">Air-conditionerResidential</a>
+            <a href="">Air-conditionerCommercial</a>
+            <a href="">Air-conditionerInverter</a>
+            <a href="">Air-conditionerComputer</a>
+            <a href="">Room Air ConditioningSpecial</a>
+            <a href="">Air-conditionerClean</a>
+            <a href="">Air-conditionerThermostatic</a>
+            <a href="">Conditioner Parts</a>
+            <a href="">Air-conditionerComputer</a>
+            <a href="">Room Air ConditioningSpecial</a>
+            <a href="">Air-conditionerClean</a>
+            <a href="">Air-conditionerThermostatic</a>
+            <a href="">Conditioner Parts</a>
+          </div>
+        </li>
+        <li class="ml_list pro_cls_items">
+          <i class="iconfont iconsvg-09 custom_ico"></i>
+          <a href="" class="cls_txt">Miscellaneous</a>
+          <i class="iconfont iconangle-right"></i>
+        </li>
+        <li class="ml_list pro_cls_items">
+          <i class="iconfont iconsvg-08 custom_ico"></i>
+          <a href="" class="cls_txt">All Categories</a>
+          <i class="iconfont iconangle-right"></i>
+          <div class="pro_cls_dp">
+            <a href="">Central        </a>
+            <a href="">Air-conditionerResidential</a>
+            <a href="">Air-conditionerCommercial</a>
+            <a href="">Air-conditionerInverter</a>
+            <a href="">Air-conditionerComputer</a>
+            <a href="">Room Air ConditioningSpecial</a>
+            <a href="">Air-conditionerClean</a>
+            <a href="">Air-conditionerThermostatic</a>
+            <a href="">Conditioner Parts</a>
+            <a href="">Air-conditionerComputer</a>
+            <a href="">Room Air ConditioningSpecial</a>
+            <a href="">Air-conditionerClean</a>
+            <a href="">Air-conditionerThermostatic</a>
+            <a href="">Conditioner Parts</a>
+          </div>
+        </li>
+      </div>
+    </ul>
+    <ul class="model_list hot_pro">
+      <h4 class="model_tit">hot-sale product</h4>
+      <div class="hot_pro_items flex-sb">
+        <li class="ml_list">
+          <a href="" class="hot_pro_pic"><img src="assets/images/in_pro.jpg" alt=""></a>
+          <p class="hot_pro_txt">Trending Now</p>
+        </li>
+        <li class="ml_list">
+          <a href="" class="hot_pro_pic"><img src="assets/images/in_pro.jpg" alt=""></a>
+          <p class="hot_pro_txt">Trending Now</p>
+        </li>
+        <li class="ml_list">
+          <a href="" class="hot_pro_pic"><img src="assets/images/in_pro.jpg" alt=""></a>
+          <p class="hot_pro_txt">Trending Now</p>
+        </li>
+        <li class="ml_list">
+          <a href="" class="hot_pro_pic"><img src="assets/images/in_pro.jpg" alt=""></a>
+          <p class="hot_pro_txt">Trending Now</p>
+        </li>
+        <li class="ml_list">
+          <a href="" class="hot_pro_pic"><img src="assets/images/in_pro.jpg" alt=""></a>
+          <p class="hot_pro_txt">Trending Now</p>
+        </li>
+        <li class="ml_list">
+          <a href="" class="hot_pro_pic"><img src="assets/images/in_pro.jpg" alt=""></a>
+          <p class="hot_pro_txt">Trending Now</p>
+        </li>
+        <li class="ml_list">
+          <a href="" class="hot_pro_pic"><img src="assets/images/in_pro.jpg" alt=""></a>
+          <p class="hot_pro_txt">Trending Now</p>
+        </li>
+        <li class="ml_list">
+          <a href="" class="hot_pro_pic"><img src="assets/images/in_pro.jpg" alt=""></a>
+          <p class="hot_pro_txt">Trending Now</p>
+        </li>
+      </div>
+    </ul>
+    <ul class="model_list trade_show">
+      <h4 class="model_tit">Online trade Show</h4>
+      <div class="show_box">
+        <li class="ml_list exhibtion flex-sb">
+          <div class="exhibtion_left">
+            <h5>Exhibtions</h5>
+            <p>Make an order of the global HVACR EXPO</p>
+            <a href="" class="view_more">View more</a>
+          </div>
+          <a href=""><img src="assets/images/in_pic0.jpg" alt=""></a>
+        </li>
+        <li class="ml_list">
+          <h6>The 77th Station of Coowor Global Promotion Tour—Brazil</h6>
+          <img src="assets/images/in_pic1.jpg" alt="">
+        </li>
+      </div>
+      
+    </ul>
+  </section>
+
+  <!-- pro switch -->
+  <section class="cls_switch_box wid">
+    <header class="cls_tit flex-sb">
+      <a href="" class="tit_list active iconfont">Air <br> Conditioner</a>
+      <a href="" class="tit_list">Refrigeration <br> Equipment</a>
+      <a href="" class="tit_list">Ventilation <br> System</a>
+      <a href="" class="tit_list">Heating <br> Equipment</a>
+      <a href="" class="tit_list">Assembly <br> Supplies</a>
+      <a href="" class="tit_list">Tools and <br> Equipment</a>
+    </header>
+    <section class="cls_infos_box">
+      <div class="cls_infos flex-sb">
+        <a href="" class="left_img"><img src="assets/images/in_pic2.jpg" alt=""></a>
+        <ul class="cls_infos_items flex-sb">
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+        </ul>
+      </div>
+    </section>
+  </section>
+
+  <section class="cls_switch_box wid">
+    <header class="cls_tit flex-sb">
+      <a href="" class="tit_list active iconfont">Air <br> Conditioner</a>
+      <a href="" class="tit_list">Refrigeration <br> Equipment</a>
+      <a href="" class="tit_list">Ventilation <br> System</a>
+      <a href="" class="tit_list">Heating <br> Equipment</a>
+      <a href="" class="tit_list">Assembly <br> Supplies</a>
+      <a href="" class="tit_list">Tools and <br> Equipment</a>
+    </header>
+    <section class="cls_infos_box">
+      <div class="cls_infos flex-sb">
+        <a href="" class="left_img"><img src="assets/images/in_pic2.jpg" alt=""></a>
+        <ul class="cls_infos_items flex-sb">
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+          <li class="cls_info_list"><a href="" class="info_pic"><img src="assets/images/in_pro2.jpg" alt=""></a><p class="info_txt">Central Air-conditioner</p></li>
+        </ul>
+      </div>
+    </section>
+  </section>
+
+  <!-- buy demand form  -->
+  <section class="buy_demand">
+    <img src="assets/images/in_ban2.jpg" alt="">
+    <div class="demand_box wid flex-sb">
+      <div class="demand_form hei flex">
+        <div class="demand_form_info">
+          <h4>Please Post<br>Your Buying Demand</h4>
+          <label for="pro_name">
+            Product Name :
+            <input type="text" id="pro_name" name="pro_name" placeholder="What are you looking for ...">
+          </label>
+          <label for="pro_qty">
+            Purchase Quantity :
+            <input type="text" id="pro_qty" name="pro_qty">
+            <select name="" id="">
+              <option value="">Set</option>
+            </select>
+          </label>
+          <button class="demand_btn">Post Buying Lead</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- partner -->
+  <section class="partner_box">
+    <div class="partner_inner_box wid ">
+      <div class='app-slide'>
+        <div class="swiper-container">
+          <div class="swiper-wrapper flex-sb">
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+            <div class="swiper-slide">
+              <a href=""><img src="assets/images/partner.jpg" alt=""></a>
+            </div>
+          </div>
+          <!-- pager -->
+          <div class="swiper-button-prev iconfont iconangle-left"></div>
+          <div class="swiper-button-next iconfont iconangle-right"></div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination flex"></div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="account_wish">
+    <ul class="aw_items wid">
+      <div class="aw_inner flex-sb">
+        <a href="" class="aw_list flex">
+          <i class="iconfont iconsvg-12"></i>
+          <div class="ico_info">
+            <h6>Help Center</h6>
+            <p>Ask questions & get instant answers</p>
+          </div>
+        </a>
+        <a href="login.html" class="aw_list flex">
+          <i class="iconfont iconsvg-13"></i>
+          <div class="ico_info">
+            <h6>My Account</h6>
+            <p>Manage your information & settings</p>
+          </div>
+        </a>
+        <a href="" class="aw_list flex">
+          <i class="iconfont iconheart-o"></i>
+          <div class="ico_info">
+            <h6>Wish List</h6>
+            <p>Tell everyone what you want</p>
+          </div>
+        </a>
+      </div>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <ul class="footer_items flex-sb wid">
+      <li class="foot_list">
+        <h4 class="foot_tit">NEWSLETTER</h4>
+        <p>Join beiduo lovers and get our latest parts <br>& resources sent right to your inbox. </p>
+        <form action="">
+          <input type="text" name="newsletter_name"  placeholder="Your name">
+          <input type="text" name="newsletter_email" placeholder="Your email">
+          <button class="newsletter_btn">SUBMIT</button>
+        </form>
+        <div class="social_link">
+          <a href=""><i class="iconfont iconfacebook"></i></a>
+          <a href=""><i class="iconfont icontwitter"></i></a>
+          <a href=""><i class="iconfont iconlinkedin-square"></i></a>
+          <a href=""><i class="iconfont iconinstagram"></i></a>
+          <a href=""><i class="iconfont iconpinterest-p"></i></a>
+        </div>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">Buying on Unitecool</h4>
+        <a href="">Post Buying Leads</a>
+        <a href="">For Buyers</a>
+        <a href="">New Users</a>
+        <a href="">Feedback</a>
+      </li>
+      <!-- <li class="foot_list">
+        <h4 class="foot_tit">Sell on Unitecool </h4>
+        <a href="">For Suppliers</a>
+        <a href="">Release Products</a>
+        <a href="">Keyword Services</a>
+      </li> -->
+      <li class="foot_list">
+        <h4 class="foot_tit">ABOUT UNITECOOL</h4>
+        <a href="">News & Events</a>
+        <a href="">About Unitecool</a>
+        <a href="">Contact Unitecool</a>
+        <a href="">Sitemap</a>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">Help Center</h4>
+        <a href="">Instructions </a>
+        <a href="">Rules & Policies</a>
+        <a href="">Guide</a>
+        <a href="">Activity</a>
+      </li>
+    </ul>
+  </footer>
+
+  <div class="copyright">
+    <ul class="cpy_items flex-sb wid">
+      <li class="cpy_list cpy_txt">Copyright © 2003-2020 UNITECOOL All rights reserved.</li>
+      <li class="cpy_list flex-sb">
+        <a href="">Privacy Policy</a>
+        <a href="" class="link_cent">Secure Shopping</a>
+        <a href="">XML</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+
+    // banner js
+    var swiper = new Swiper('.swiper-container-ban', {
+      autoplay:true,
+      pagination: {
+        el: '.swiper-pagination-ban',
+        clickable: true,
+      },
+    });
+
+    // partner js
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 6,
+      slidesPerColumn: 2,
+      slidesPerColumnFill : 'row',
+      spaceBetween: 16,
+      autoplay:true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      // 自适应
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+        },
+        550: {
+          slidesPerView: 3,
+          spaceBetween: 12,
+        },
+        768: {
+          slidesPerView: 4,
+          // spaceBetween: 40,
+        },
+        1024: {  //屏幕尺寸大于1024 显示6个模块
+          slidesPerView: 5,
+          // spaceBetween: 50,
+        },
+        1250: {
+          slidesPerView: 6,
+        }
+      }
+      
+    });
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,2924 @@
+@import "_var.scss";
+// @import "_iconfont.scss";
+@import "_reset.scss";
+@import "_common.scss";
+@import "_include.scss";
+// @import "_bxslide.scss";
+
+@import url(https://at.alicdn.com/t/font_2103864_wvk2pg48rg.css);
+
+body{
+  background: $clr10;
+}
+
+:root {
+  --swiper-navigation-size: 28px!important;
+}
+/* header css */
+.hd{
+  height: 120px;
+  @extend .rel;
+  z-index: 999;
+  .inner_hd{
+    @extend .fix;
+    height: 120px;
+    width: $width;
+    background: $wt;
+    box-shadow: 0 2px 1px rgba(0,0,0,.1);
+    .top_nav{
+      height: $wid10 + $wid3;
+    }
+    .top_nemu{
+      height: $wid10 + $wid14;
+    }
+  }
+
+  .list_logo{
+    width: 84px;
+  }
+  .list_form{
+    width: $wid5;
+    margin-right: $auto;
+    margin-left: 3%;
+    form{
+      @extend .rad2;
+      border: 1px solid $clr7;
+      height: 2.5rem;
+      padding: 0 10px;
+      input,button{
+        height: 2.5rem;
+      }
+      input{
+        flex: 1;
+        &::placeholder{
+          color: lighten($clr7, 20%);
+        }
+      }
+      button{
+        i:before{
+          font-size: $fs4;
+          font-weight: 600;
+          color: $bk;
+        }
+      }
+    }
+  }
+  .list_items{
+    width: 200px;
+    .ico_list{
+      @extend .flex-clo;
+      .iconfont:before,.icon_txt{
+        color: $clr2;
+      }
+      .iconfont:before{
+        font-size: $fs1 + $fs2;
+        font-weight: 500;
+
+      }
+      .icon_txt{
+        font-size: $fs2;
+        padding-top: 4px;
+        // @media screen and (max-width: 1024px){
+        //   @include none;
+        // }
+      }
+    }
+    .list_nav{
+      font-size: $fs;
+      color: $clr3;
+      &.list_detect{
+        @include btn1;
+      }
+    }
+    @media screen and (max-width: 1024px){
+      width: 150px;
+    }
+  }
+
+  .top_menu_list{
+    @extend .hei;
+    padding-bottom: 6px;
+    &.cate_items{
+      @extend .rel;
+      width: 114px;
+      .cls_items{
+        left: -20px;
+        width: 300px;
+        max-height: 600px;
+        box-shadow: 0 4px 4px rgba(0,0,0,.1);
+        scrollbar-width: none; /* firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+        overflow-x: hidden;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          display: none; /* Chrome Safari */
+        }
+      }
+    }
+    &.inner_pg{
+      margin-left: 20px;
+      margin-right: auto;
+      width: 420px;
+      .list_pg{
+        font-weight: 600;
+        color: $clr2;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      @media screen and (max-width: 767px){
+        // position: absolute;
+        // top: $width;
+        // right: 0;
+        // display: $flex;
+        // flex-direction: column;
+        // justify-content: space-evenly;
+        // background: #fff;
+        // width: 200px;
+        // height: auto;
+        // padding: 14px;
+        // margin-left: 0;
+        // a{
+        //   @include flex_start;
+        //   width: $width;
+        //   padding: 8px 0;
+        // }
+      }
+    }
+
+    a{
+      font-size: $fs2;
+      &.cate{
+        color: lighten($clr7, 10%);
+      }
+    }
+    .iconfont:before{
+      font-size: $fs3;
+      color: lighten($clr7, 10%);
+    }
+  }
+  .cls_items,.page_items{
+    @extend .abs;
+    display: none;
+    top: $width;
+    width: 240px;
+    background: $wt;
+    padding: 10px;
+    li{
+      padding: 8px 10px;
+      .pro_cls_dp{
+        top: 0;
+        left: $width;
+        height: calc(100% + 1px);
+      }
+      &:hover{
+        >a{
+          color: $bu1;
+        }
+      }
+    }
+    a{
+      @extend .anim;
+      margin: 0;
+    }
+    @media screen and (max-width: 450px){
+      width: $width;
+    }
+  }
+  .page_menu{
+    @extend %none;
+    .iconfont{
+      transform: rotateY(180deg);
+      &:before{
+        font-size: $fs5;
+      }
+    }
+    @media screen and (max-width: 767px){
+      display: $flex;
+    }
+  }
+  .page_items{
+    right: 0;
+    li{
+      width: $width;
+      padding: 10px;
+      &.page_list{
+        a{
+          @include flex_start;
+          padding: 8px 0;
+          color: $clr6;
+          font-weight: 600;
+        }
+      }
+      @media screen and (max-width: 450px){
+        @include flex_start;
+        padding: 12px 0;
+        a{
+          margin-right: 18px;
+        }
+      }
+    }
+  }
+
+
+
+  .mobile_nav_box{
+    @extend .hei;
+    .mob_nav_items{
+      height: $wid3 + $wid14;
+      padding: 10px 0;
+      i.iconfont{
+        &:before{
+          font-size: 25px;
+          color: $clr6;
+        }
+      }
+      .list_logo{
+        width: 70px;
+      }
+    }
+    .mob_search{
+      height: $wid10;
+      width: $wid1;
+      margin: 0 auto;
+      form{
+        height: 2.2rem;
+      }
+    }
+    .categories{
+      .cls_items{
+        left: 0;
+        li:hover{
+          border-right: 1px solid $bu1;
+        }
+      }
+    }
+  }
+}
+
+/* banner on search css */
+.search_box{
+  @extend .abs;
+  z-index: 888;
+  width: $width;
+  height: 70px;
+  background: rgba(darken($bu1, 30%),0.6);
+  .search_inner_box{
+    padding: 14px 20px;
+    select,input,button{
+      flex-grow: 1;
+      height: $width;
+
+    }
+    select,input{
+      background: $wt;
+      margin-right: 1px;
+      padding: 0 8px;
+      color: $clr2;
+      font-size: $fs2;
+    }
+    .search_btn,.share_btn{
+      @extend .flex;
+      @extend .rad1;
+      color: $wt;
+      .iconfont:before{
+        font-size: $fs5;
+        margin-right: 8px;
+        @media screen and (max-width: 1024px){
+          margin-right: 0;
+        }
+      }
+      span{
+        font-size: $fs2;
+        font-weight: 600;
+        @media screen and (max-width: 1024px){
+          @include none;
+        }
+      }
+    }
+    .search_btn{
+      background: $og1;
+      margin: 0 10px;
+    }
+    .share_btn{
+      background: $bu1;
+    }
+    @media screen and (max-width: 1200px){
+      padding: 14px 0;
+    }
+  }
+  @media screen and (max-width: 767px){
+    @include none;
+  }
+}
+
+/* banner css */
+.banner_swiper_box{
+  @extend .rel;
+  .swiper-container-ban{
+    display: flex;
+    overflow: hidden;
+  }
+  .swiper-pagination-ban{
+    @extend .abs;
+    bottom: 16px;
+    width: $width;
+    span{
+      @extend .rad5;
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      margin: 0 8px;
+      outline: none;
+      &.swiper-pagination-bullet-active{
+        background: $bu1;
+      }
+    }
+  }
+}
+
+
+
+/* pro trade css */
+.pros_trade{
+  background: $wt;
+  border-bottom: 1px solid $clr8;
+  padding: 20px 12px;
+  margin-bottom: 1%;
+
+  h4{
+    @extend .ttu;
+    width: $width;
+    font-size: $fs2;
+    color: $clr2;
+    padding-bottom: 10px;
+    &.cls_tit{
+      border-bottom: 1px solid $clr9;
+      padding-bottom: 9px;
+    }
+  }
+  .model_list{
+    @extend .self;
+    display: $flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    &.hot_pro{
+      flex: 3;
+      margin: 0 40px;
+      @media screen and (max-width: 1400px){
+        margin-left: 0;
+      }
+      @media screen and (max-width: 850px){
+        flex: unset;
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+    &.pro_cls{
+      flex: 1;
+      .cls_items{
+        margin-top: 1rem;
+      }
+      @media screen and (max-width: 1400px){
+        @include none;
+      }
+    }
+    &.trade_show{
+      flex: 1.2;
+      .exhibtion{
+        margin-bottom: 10px;
+        @media screen and (max-width: 450px){
+          margin-bottom: 20px;
+        }
+      }
+    }
+    @media screen and (max-width: 850px){
+      width: $width;
+    }
+  }
+
+  .hot_pro_items{
+    @extend .wrap;
+    flex: 1;
+    .ml_list{
+      @extend .flex-clo;
+      @extend .self;
+      @extend .hide;
+      justify-content: space-between;
+      width: $wid9;
+      margin-bottom: 1rem;
+      .hot_pro_pic{
+        @extend .anim;
+        width: $width;
+      }
+      .hot_pro_txt{
+        @extend .anim;
+        margin-top: 20px;
+        margin-bottom: auto;
+        color: $clr7;
+        font-size: $fs2;
+      }
+      &:nth-child(-n+7):nth-child(n+5){
+        margin-bottom: 0;
+      }
+      &:hover{
+        .hot_pro_pic{
+          margin-left: 10px;
+        }
+        .hot_pro_txt{
+          color: $og1;
+        }
+      }
+      @media screen and (max-width: 600px){
+        width: $wid6;
+        &:last-child{
+          margin-right: auto;
+          margin-left: 2%;
+        }
+      }
+      @media screen and (max-width: 450px){
+        width: $wid4;
+        &:last-child{
+          margin: 0;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 850px){
+    @include wrap;
+    margin-bottom: 30px;
+  }
+  
+}
+.pro_cls_items{
+  @extend .flex-sb;
+  @extend .anim;
+  background: $wt;
+  padding: 8px 0;
+  border: 1px solid transparent;
+  .cls_txt,.iconfont{
+    color: $clr6;
+  }
+  .cls_txt{
+    margin: 0 1rem;
+    font-size: $fs2;
+  }
+  .custom_ico:before{
+    font-size: $fs4;
+  }
+  .iconangle-right{
+    margin-left: auto;
+  }
+  &:hover{
+    margin-left: 10px;
+    padding: 8px;
+    border-color: $bu1;
+    border-right: none;
+    >.pro_cls_dp{
+      display: flex;
+    }
+  }
+}
+.cls_items,.show_box{
+  @extend .self;
+  flex: 1;
+  display: $flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  .ml_list{
+    width: $width;
+    h5,h6{
+      font-weight: 600;
+      color: $clr2;
+    }
+    h5{
+      font-size: $fs;
+      margin-bottom: 6px;
+    }
+    h6{
+      font-size: $fs2;
+      margin-bottom: 1rem;
+    }
+    p{
+      font-size: $fs2;
+      color: $clr7;
+    }
+    a.view_more{
+      @extend .anim;
+      background: $bu1;
+      font-size: $fs2;
+      color: $wt;
+      display: inline-block;
+      padding: 6px 12px;
+      margin-top: 1rem;
+      &:hover{
+        background: lighten($bu1, 10%)
+      }
+    }
+  }
+}
+.cls_items{
+  @extend .rel;
+  z-index: 890;
+  .pro_cls_dp{
+    @extend .abs;
+    @extend .flex-sb;
+    @extend .wrap;
+    @include flex_start;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    display: none;
+    top: -1rem;
+    left: calc(100% + 9px);
+    z-index: -1;
+    width: 610px;
+    height: calc(100% + 1rem);
+    background: $wt;
+    border: 1px solid $bu1;
+    padding: 20px;
+    >a{
+      @extend .fhd1;
+      @extend .anim;
+      width: 180px;
+      font-size: $fs2;
+      @include flex_start;
+      padding: 8px 0;
+      white-space: nowrap;
+      color: $clr7;
+      margin-left: 12px;
+      &:hover{
+        color: $og1;
+      }
+      &:nth-child(-n+9):nth-child(n){
+        margin-left: 0;
+      }
+    }
+    
+  }
+  
+}
+
+.cls_switch_box{
+  margin: 40px auto;
+  .cls_tit{
+    background: $wt;
+    a{
+      @extend .flex;
+      @extend .cen;
+      @extend .hei;
+      // flex: 1;
+      width: calc(100% / 6);
+      padding: 14px 0;
+      font-size: $fs2;
+      font-weight: 600;
+      color: $clr3;
+      &.active{
+        @extend .rel;
+        background: $og1;
+        color: $wt;
+        &:before{
+          @extend .abs;
+          content:'\e639';
+          top: $width;
+          color: $og1;
+          font-size: $fs5;
+          transform: translateY(-42%);
+        }
+      }
+      @media screen and (max-width: 1200px){
+        width: $wid8;
+        &:last-child{
+          @include none;
+        }
+      }
+      @media screen and (max-width: 900px){
+        width: $wid8;
+        &:nth-child(5){
+          @include none;
+        }
+      }
+      @media screen and (max-width: 700px){
+        width: calc( 100% / 3);
+        &:nth-child(4){
+          @include none;
+        }
+      }
+      @media screen and (max-width: 500px){
+        width: $wid3;
+        &:nth-child(3){
+          @include none;
+        }
+      }
+    }
+  }
+
+  .cls_infos{
+    margin-top: 8px;
+    .left_img,.cls_infos_items{
+      @extend .self;
+    }
+    .left_img{
+      // flex: 1;
+      width: calc(100% / 6);
+      @media screen and (max-width: 1200px){
+        width: $wid8;
+      }
+      @media screen and (max-width: 900px){
+        @include none;
+      }
+    }
+    .cls_infos_items{
+      @extend .wrap;
+      // flex: 5;
+      width: calc((100% / 6) * 5);
+      @include flex_start;
+      .cls_info_list{
+        @extend .hide;
+        @extend .self;
+        background: $wt;
+        margin-bottom: 8px;
+        width: calc((100% - 32px) / 5);
+        &:not(:nth-child(5n)){
+          margin-right: 8px;
+          @media screen and (max-width: 1200px){
+            margin-right: 0;
+          }
+        }
+        p,a{
+          @extend .anim;
+        }
+        p{
+          @extend .cen;
+          font-size: $fs2;
+          color: $clr7;
+          margin-top: 10px;
+          @media screen and (max-width: 1200px){
+            margin-bottom: 10px;
+          }
+        }
+        &:nth-child(-n+10):nth-child(n+6){
+          margin-bottom: 0;
+        }
+        &:hover{
+          a{
+            transform: scale(1.1);
+          }
+          p{
+            color: $og1;
+          }
+        }
+        @media screen and (max-width: 1200px){
+          width: calc((100% - 24px) / 4);
+          &:nth-child(9),&:nth-child(10){
+            @include none;
+          }
+          &:nth-child(5n){
+            margin-bottom: 0;
+          }
+          &:not(:nth-child(4n)){
+            margin-right: 8px;
+          }
+        }
+        @media screen and (max-width: 700px){
+          width: calc((100% - 16px) / 3);
+          &:nth-child(7),&:nth-child(8){
+            @include none;
+          }
+          &:not(:nth-child(4n)){
+            margin-right: 0;
+          }
+          &:not(:nth-child(3n)){
+            margin-right: 8px;
+          }
+          &:nth-child(4){
+            margin-bottom: 0;
+          }
+        }
+        @media screen and (max-width: 500px){
+          width: calc((100% - 8px) / 2);
+          &:nth-child(5),&:nth-child(6){
+            @include none;
+          }
+          &:not(:nth-child(3n)){
+            margin-right: 0;
+          }
+          &:not(:nth-child(2n)){
+            margin-right: 8px;
+          }
+          &:nth-child(3){
+            margin-bottom: 0;
+          }
+        }
+      }
+      @media screen and (max-width: 1200px){
+        width: $wid8*4;
+      }
+    }
+    
+  }
+}
+
+/* buy demand css */
+.buy_demand{
+  img{
+    @media screen and (max-width: 1150px){
+      width: 150%;
+      margin-left: -25%;
+    }  
+    @media screen and (max-width: 850px){
+      width: 200%;
+      margin-left: -50%;
+    } 
+    @media screen and (max-width: 600px){
+      width: 250%;
+      margin-left: -75%;
+    }
+    @media screen and (max-width: 500px){
+      width: 330%;
+      margin-left: -115%;
+    }
+    @media screen and (max-width: 450px){
+      width: 400%;
+      margin-left: -150%;
+    }
+  }
+  @extend .rel;
+  @extend .hide;
+  .demand_box{
+    @extend .abs;
+    @extend .hei;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    justify-content: flex-end;
+    .demand_form{
+      @extend .wrap;
+      width: $wid3;
+      background: url(../assets/images/in_bg.png)no-repeat center center/cover;
+      .demand_form_info{
+        width: $wid5 + $wid14;
+        margin-left: 6%;
+        h4{
+          font-size: $fs6;
+          color: $clr3;
+          margin-bottom: 12px;
+          @media screen and (max-width: 1150px){
+            br{
+              @include none;
+            }
+          }
+          @media screen and (max-width: 600px){
+            font-size: $fs5;
+          }
+          @media screen and (max-width: 450px){
+            font-size: $fs4;
+          }
+        }
+        label{
+          @extend .flex-sb;
+          margin-bottom: 1rem;
+          font-size: $fs;
+          color: $clr3;
+          input,select{
+            border: 1px solid $clr7;
+            height: 1.8rem;
+          }
+          input{
+            padding: 0 6px;
+            &::placeholder{
+              font-size: $fs1;
+              color: $clr8;
+            }
+            &#pro_name{
+              width: 260px;
+              @media screen and (max-width: 500px){
+                margin-left: 0;
+                margin-top: 6px;
+                width: $width;
+              }
+            }
+            &#pro_qty{
+              width: 150px;
+              margin-left: auto;
+              @media screen and (max-width: 1450px){
+                margin-left: 16px;
+              }
+              @media screen and (max-width: 1150px){
+                margin-left: 16px;
+              }
+              @media screen and (max-width: 500px){
+                margin-left: 0;
+                margin-top: 6px;
+                width: $wid5;
+              }
+            }
+            @media screen and (max-width: 1150px){
+              margin-left: 16px;
+            }
+          }
+          select{
+            width: 90px;
+            margin-left: 10px;
+            @media screen and (max-width: 500px){
+              margin-top: 6px;
+              width: $wid5;
+            }
+          }
+          .input_sel_box{
+            @media screen and (max-width: 500px){
+              @include flex;
+              justify-content: space-between;
+              width: $width;
+            }
+          }
+          @media screen and (max-width: 1150px){
+            justify-content: flex-start;
+          }
+          @media screen and (max-width: 600px){
+            @include wrap;
+            font-size: $fs2;
+          }
+        }
+        .demand_btn{
+          background: $og1;
+          padding: 10px 26px;
+          color: $wt;
+        }
+        @media screen and (max-width: 1450px){
+          width: auto;
+          margin-left: 0;
+        }
+        @media screen and (max-width: 1150px){
+          width: $width;
+          margin-left: 8%;
+        }
+        @media screen and (max-width: 600px){
+          margin: 0;
+          padding: 0 5%;
+        }
+        @media screen and (max-width: 450px){
+          padding: 3% 5%;
+        }
+      }
+      &:after{
+        @extend .abs;
+        content: '';
+        width: 260px;
+        height: $width;
+        background: $wt;
+        right: -17%;
+        @media screen and (max-width: 1150px){
+         @include none; 
+        }
+      }
+      @media screen and (max-width: 1450px){
+        width: $wid7*2;
+      }
+      @media screen and (max-width: 1150px){
+        width: $wid3 + $wid10;
+        height: $wid3 + $wid7;
+        background: rgba(255,255,255,.6);
+      }
+      @media screen and (max-width: 850px){
+        width: $width;
+      }
+      @media screen and (max-width: 450px){
+        height: $wid7*3;
+      }
+      
+    }
+    @media screen and (max-width: 1150px){
+      justify-content: center;
+    }
+  }
+}
+
+.partner_box{
+  background: $wt;
+  padding: 3% 0;
+  .partner_inner_box{
+    @extend .rel;
+    .app-slide{
+      @extend .hide;
+      @extend .margin;
+      width: $wid1;
+      @media screen and (max-width: 767px){
+        width: $width;
+      }
+    }
+  }
+  .swiper-wrapper{
+    @extend .wrap;
+  }
+  .iconfont{
+    @extend .abs;
+    @extend .flex;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    &:before{
+      font-size: $fs7;
+      color: $clr8;
+      font-weight: 400;
+      @extend .anim;
+      @media screen and (max-width: 767px){
+        @include none;
+      }
+    }
+    &.iconangle-left{
+      left: 0;
+    }
+    &.iconangle-right{
+      right: 0;
+    }
+    &[aria-disabled="true"]{
+      display: none;
+    }
+    &:hover{
+      &:before{
+        color: $bu1;
+      }
+    }
+  }
+  .swiper-pagination{
+    width: $width;
+    height: 4px;
+    margin-top: 16px;
+    span{
+      @extend .hei;
+      @extend .anim;
+      width: 24px;
+      background: $clr8;
+      margin: 0 4px;
+      &.swiper-pagination-bullet-active{
+        width: 50px;
+        background: $bu1;
+      }
+    }
+  }
+  @media screen and (max-width: 767px){
+    padding: 30px 0;
+  }
+}
+
+.account_wish{
+  background: $bu1;
+  padding: 30px 0;
+  margin-bottom: 3%;
+  .aw_inner{
+    @extend .margin;
+    width: $wid2;
+    .aw_list{
+      flex: 1;
+      i.iconfont:before{
+        color: $wt;
+        font-size: $fs7;
+        margin-right: 10px;
+      }
+      h6,p{
+        font-size: $fs2;
+        color: $wt;
+      }
+      h6{
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      &:nth-child(2){
+        border-left: 1px solid $wt;
+        border-right: 1px solid $wt;
+        padding: 0 15px;
+        margin: 0 15px;
+      }
+      @media screen and (max-width: 1024px){
+        &:nth-child(1){
+          @include flex_start;
+        }
+      }
+      @media screen and (max-width: 650px){
+        width: $width;
+        flex: none;
+        @include flex_start;
+        &:nth-child(2){
+          border: none;
+          margin: 0;
+          padding: 30px 0;
+        }
+      }
+    }
+    @media screen and (max-width: 1024px){
+      width: $width;
+    }
+    @media screen and (max-width: 650px){
+      @include wrap;
+    }
+  }
+}
+
+.footer{
+  .footer_items{
+    @media screen and (max-width: 900px){
+      @include wrap;
+    }
+  }
+  .foot_list{
+    @extend .self;
+    @media screen and (max-width: 900px){
+      width: $wid5;
+      margin-bottom: 30px;
+    }
+    @media screen and (max-width: 500px){
+      width: $width;
+    }
+  }
+  h4{
+    @extend .ttu;
+    font-size: $fs3;
+    color: $clr6;
+    margin: 1rem 0;
+  }
+  a,p{
+    font-size: $fs2;
+    color: $clr7;
+    margin: 10px 0;
+  }
+  a{
+    @extend .anim;
+    @include flex_start;
+    &:hover{
+      color: $bu1;
+    }
+  }
+  p{
+    @media screen and (max-width: 900px){
+      br{
+        @include none;
+      }
+    }
+  }
+  input,button{
+    @extend .rad1;
+  }
+  input{
+    width: $width;
+    display: block;
+    background: $wt;
+    line-height: 1.5rem;
+    padding: 6px;
+    margin-bottom: 10px;
+    &::placeholder{
+      color: $clr8;
+      font-size: $fs1;
+    }
+  }
+  button{
+    @extend .anim;
+    background: $clr3;
+    color: $wt;
+    font-weight: 600;
+    font-size: $fs2;
+    padding: 8px 26px;
+    &:hover{
+      background: $bu1;
+    }
+  }
+  .social_link{
+    @extend .flex-sb;
+    margin-top: 1rem;
+    width: $width;
+    a{
+      i{
+        @extend .rad5;
+        @extend .flex;
+        @extend .anim;
+        width: 36px;
+        height: 36px;
+        border: 1px solid $clr7;
+        &:before{
+          @extend .anim;
+          font-size: $fs5;
+          color: $clr7;
+        }
+        &:hover{
+          border-color: $bu1;
+          &:before{
+            color: $bu1;
+          }
+        }
+      }
+      @media screen and (max-width: 900px){
+        margin-left: 14px;
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+    @media screen and (max-width: 900px){
+      @include flex_start;
+    }
+  }
+}
+
+.copyright{
+  margin-top: 20px;
+  padding: 30px 0;
+  background: $wt;
+  .cpy_items{
+    @media screen and (max-width: 600px){
+      @include wrap;
+    }
+  }
+  li,a{
+    @extend .anim;
+    font-size: $fs1;
+    color: $clr7;
+  }
+  li{
+    @media screen and (max-width: 600px){
+      
+      margin: 10px auto;
+    }
+  }
+  .link_cent{
+    margin: 0 20px;
+  }
+  a:hover{
+    color: $bu1;
+  }
+  @media screen and (max-width: 600px){
+    padding: 20px 0;
+  }
+}
+
+
+/* products css */
+.pros_h4{
+  font-size: $fs6;
+  color: $clr3;
+  margin-bottom: 14px;
+  @media screen and (max-width: 600px){
+    font-size: $fs5;
+  }
+}
+.pros_template{
+  background: $wt;
+  display: $flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  >a{
+    @extend .hide;
+    img{
+      @extend .anim;
+    }
+  }
+  .pros_template_infos{
+    width: $width;
+    .pros_name{
+      @extend .fhd1;
+    }
+    p{
+      font-size: $fs2;
+      color: $clr8;
+      span{
+        margin-left: 4px;
+        color: lighten($clr8, 20%)
+      }
+    }
+    .pros_name{
+      @extend .fhd;
+      margin-bottom: 12px;
+    }
+    .pieces{
+      color: $clr7;
+    }
+  }
+  &:hover{
+    >a img{
+      transform: scale(1.1);
+    }
+  }
+}
+
+.pros_menu{
+  .pros_menu_items,.pros_ban{
+    @extend .self;
+  }
+  .pros_ban{
+    @media screen and (max-width: 1500px){
+      width: $width;
+    }
+  }
+  .pros_menu_items{
+    width: 300px;
+    display: $flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    // flex-grow: 1;
+    margin-right: $fs5;
+    background: $wt;
+    padding: 10px 0;
+    outline: 1px solid $clr9;
+    h5,a{
+      width: $width;
+      padding: 8px 20px;
+    }
+    h5{
+      @extend .ttu;
+      font-weight: 600;
+      font-size: $fs;
+      color: $clr2;
+    }
+    a{
+      @extend .anim;
+      @include flex_start;
+      color: $clr8;
+      &.pros_all{
+        color: $og1;
+        font-weight: 600;
+      }
+      &.pros_mn_list{
+        &:hover,&.active{
+          background: $bu1;
+          color: $wt;
+        }
+      }
+    }
+    @media screen and (max-width: 1500px){
+      @include none;
+    }
+  }
+}
+
+.sel_pros{
+  margin: 3% $auto;
+  .sel_pro_items{
+    @media screen and (max-width: 600px){
+      @include wrap;
+    }
+    .sel_pros_list{
+      @extend .self;
+      width: $wid11;
+      display: $flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      .sel_pros_pic{
+        @extend .hide;
+        @extend .rad2;
+      }
+      .sel_pros_txt{
+        @extend .fhd1;
+        margin: 1rem 0;
+        font-weight: 600;
+        font-size: $fs2;
+        color: $clr3;
+      }
+      @media screen and (max-width: 1024px){
+        width: $wid9;
+        &:last-child{
+          @include none;
+        }
+      }
+      @media screen and (max-width: 600px){
+        width: $wid4;
+      }
+    }
+  }
+  @media screen and (max-width: 600px){
+    margin: 30px auto;
+  }
+}
+.weekly_deals{
+  margin-bottom: 3%;
+  .weekly_title{
+    margin-bottom: 14px;
+    h4{
+      margin-bottom: 0;
+    }
+    .week_link{
+      @extend .anim;
+      font-size: $fs2;
+      color: $clr8;
+      &:hover{
+        color: $bu1;
+      }
+    }
+  }
+  .week_items{
+    @extend .hide;
+    @extend .rad3;
+    li{
+      @extend .self;
+      &.week_list{
+        flex: 2;
+      }
+      &.recom_list{
+        flex: 1;
+        padding: 1rem;
+        a{
+          @extend .margin;
+          width: $wid3 + $wid14;
+        }
+        &:nth-child(-n+5):nth-child(n+2){
+          border-right: 1px solid $clr9;
+        }
+      }
+      @media screen and (max-width: 1024px){
+        &:last-child{
+          @include none;
+        }
+      }
+      @media screen and (max-width: 950px){
+        &:nth-child(5){
+          @include none;
+        }
+      }
+      @media screen and (max-width: 767px){
+        &:nth-child(4){
+          @include none;
+        }
+      }
+      @media screen and (max-width: 600px){
+        &.week_list{
+          width: $width;
+          flex: none;
+        }
+        &:nth-child(4){
+          display: flex;
+        }
+      }
+      @media screen and (max-width: 450px){
+        &.week_list{
+          width: $width;
+          flex: none;
+        }
+        &:nth-child(4){
+          @include none;
+        }
+      }
+    }
+    @media screen and (max-width: 600px){
+      @include wrap;
+    }
+  }
+}
+.recommend{
+  margin-bottom: 3%;
+  .recom_items{
+    @extend .wrap;
+    margin-top: 20px;
+    justify-content: unset;
+    .recom_list{
+      @extend .hide;
+      @extend .rad3;
+      width: calc((100% - 60px) / 6);
+      margin-bottom: 12px;
+      a{
+        width: $width;
+      }
+      .pros_template_infos{
+        margin-top: 20px;
+        padding: 1rem;
+      }
+      &:not(:nth-child(6n)){
+        margin-right: 12px;
+      }
+      @media screen and (max-width: 1024px){
+        width: calc((100% - 48px) / 5);
+        &:not(:nth-child(6n)){
+          margin-right: 0;
+        }
+        &:not(:nth-child(5n)){
+          margin-right: 12px;
+        }
+      }
+      @media screen and (max-width: 900px){
+        width: calc((100% - 36px) / 4);
+        &:not(:nth-child(5n)){
+          margin-right: 0;
+        }
+        &:not(:nth-child(4n)){
+          margin-right: 12px;
+        }
+      }
+      @media screen and (max-width: 650px){
+        width: calc((100% - 24px) / 3);
+        &:not(:nth-child(4n)){
+          margin-right: 0;
+        }
+        &:not(:nth-child(3n)){
+          margin-right: 12px;
+        }
+      }
+      @media screen and (max-width: 450px){
+        width: calc((100% - 12px) / 2);
+        &:not(:nth-child(3n)){
+          margin-right: 0;
+        }
+        &:not(:nth-child(2n)){
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+/* user info css*/
+.login_box{
+  width: $width;
+  background: $wt;
+  .login_ban,.user_infos{
+    @extend .self;
+    width: $wid3;
+  }
+  .login_ban{
+    @extend .hide;
+    @media screen and (max-width: 1200px){
+      img{
+        width: $width + $wid3;
+        margin-left: -$wid3;
+      }
+    }
+    @media screen and (max-width: 900px){
+      width: $wid10*2;
+      img{
+        width: $width*2;
+        margin-left: -$width;
+      }
+    }
+    @media screen and (max-width: 767px){
+      @include none;
+    }
+  }
+  .user_infos{
+    background: $wt;
+    .user_inner_box{
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: $wid12;
+      margin-top: $wid13;
+      .user_hd{
+        @include flex_start;
+        margin-bottom: 20px;
+        @media screen and (max-width: 767px){
+          justify-content: space-between;
+          h4{
+            margin-right: 0;
+          }
+        }
+      }
+      @media screen and (max-width: 1650px){
+        margin-top: unset;
+        margin-bottom: unset;
+      }
+      @media screen and (max-width: 1024px){
+        margin: auto;
+      }
+      @media screen and (max-width: 767px){
+        width: $wid7*2;
+      }
+      @media screen and (max-width: 600px){
+        width: $wid10*4;
+      }
+      @media screen and (max-width: 450px){
+        width: $width;
+      }
+    }
+    h4{
+      font-size: $fs5;
+      color: $clr3;
+      font-weight: 900;
+      margin-right: 40px;
+      padding: 10px 0;
+      cursor: pointer;
+      &.active{
+        color: $og1;
+      }
+    }
+    .user_form{
+      margin-bottom: 30px;
+      .input_label,button{
+        @extend .rad1;
+      }
+      .input_label{
+        @extend .flex-sb;
+        @extend .rad1;
+        border: 1px solid lighten($clr8, 10%);
+        height: 2.2rem;
+        margin-bottom: 10px;
+        input{
+          @extend .hei;
+          flex: 1;
+          &::placeholder{
+            color: lighten($clr8, 20%);
+          }
+        }
+        i.iconfont{
+          @extend .flex;
+          width: 2.2rem;
+          height: 2.2rem;
+          &:before{
+            font-size: $fs3;
+            color: $clr9;
+          }
+          &.iconsvg-13:before{
+            margin-top: -2px;
+          }
+          &.eyes:before{
+            color: $clr8;
+          }
+        }
+      }
+      button{
+        @extend .flex;
+        width: $width;
+        background: $og1;
+        color: $wt;
+        font-weight: 600;
+        font-size: $fs3;
+        padding: 8px 0;
+        margin-top: 30px;
+      }
+      .forget{
+        text-align: right;
+        margin-bottom: 6px;
+        i{
+          @extend .anim;
+          font-size: $fs1;
+          color: lighten($clr8, 20%);
+        }
+        &:hover{
+          i{
+            color: $og1;
+          }
+        }
+      }
+      .forget_txt{
+        font-size: $fs2;
+        color: lighten($clr8, 5%);
+        margin-bottom: 6px;
+      }
+      .close{
+        @extend .rad5;
+        @extend .flex;
+        @extend .margin;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,.2);
+        &:before{
+          font-size: $fs4;
+          color: $og1;
+        }
+      }
+      &.reg_form,&.forget_form{
+        display: none;
+      }
+    }
+    .other_login{
+      hr{
+        background: lighten($clr8, 30%);
+      }
+      .other_sign_in{
+        @extend .flex;
+        @include flex_start;
+        margin-top: 1rem;
+        span{
+          font-size: $fs2;
+          color: lighten($clr8, 10%);
+          margin-right: 14px;
+        }
+        a{
+          margin: 0 8px;
+          &.wc{
+            margin: 0 6px;
+          }
+        }
+        svg{
+          height: 30px;
+        }
+      }
+    }
+    @media screen and (max-width: 900px){
+      width: $wid7*2;
+    }
+    @media screen and (max-width: 767px){
+      width: $wid1;
+      padding: 30px 0 50px;
+    }
+  }
+}
+
+/* road sub nav css */
+.road_nav{
+  @include flex_start;
+  margin: $fs5 $auto;
+  a,span,i:before{
+    font-size: $fs;
+    color: $clr8;
+  }
+  i:before{
+    margin: 0 3px;
+  }
+  a{
+    @extend .anim;
+    &:hover{
+      color: $bu1;
+    }
+  }
+}
+
+
+/* pro det css */
+// .pro_det{
+//   background: $wt;
+//   padding: 40px 30px;
+//   margin-bottom: 3%;
+//   .pro_pic_info{
+//     width: $width;
+//     margin-bottom: 5%;
+//     .left_pic{
+//       width: $wid10*2;
+//       .big_pic{
+//         @extend .hide;
+//         border: 1px solid $clr8;
+//       }
+//       .small_pic_box{
+//         margin-top: 16px;
+//         @include flex_start;
+//         .small_pic{
+//           width: $wid12;
+//           border: 2px solid $clr9;
+//           padding: 4px;
+//           &:not(:nth-child(6n)){
+//             margin-right: 2%;
+//           }
+//           &.current{
+//             border-color: $og2;
+//           }
+//         }
+//       }
+//     }
+//     .right_infos{
+//       width: $wid5 + $wid14;
+//       .info_hd{
+//         margin-bottom: 1rem;
+//         padding-bottom: 1rem;
+//         border-bottom: 1px solid $clr9;
+//         h4{
+//           font-size: $fs5;
+//           color: $clr4;
+//           font-family: Arial;
+//           font-weight: 400;
+//           margin-bottom: 10px;
+//           @media screen and (max-width: 1024px){
+//             font-size: $fs4;
+//           }
+//         }
+//         .tit_desc{
+//           color: $clr8;
+//           font-size: $fs;
+//           .fob{
+//             color: $clr3;
+//           }
+//           .get{
+//             color: $bu1;
+//           }
+//           @media screen and (max-width: 1024px){
+//             font-size: $fs2;
+//           }
+//         }
+//       }
+//       .pro_price_info{
+//         @include flex_start;
+//         align-items: baseline;
+//         margin-bottom: 1rem;
+//         h3{
+//           font-size: $fs5;
+//           @media screen and (max-width: 1024px){
+//             font-size: $fs4;
+//           }
+//         }
+//         .pro_price_sets{
+//           @media screen and (max-width: 1024px){
+//             font-size: $fs2;
+//           }
+//           @media screen and (max-width: 450px){
+//             margin-top: 6px;
+//           }
+//         }
+//         @media screen and (max-width: 450px){
+//           @include wrap;
+//         }
+//       }
+//       .info_table{
+//         color: $clr8;
+//         margin-bottom: 20px;
+//         .table_list{
+//           @include flex_start;
+//           margin: 10px 0;
+//           .type,.lead_time,.other,.lead_box{
+//             @extend .self;
+//             align-items: flex-start;
+//           }
+//           .type,.lead_time{
+//             width: 100px;
+//             @media screen and (max-width: 450px){
+//               width: $width;
+//               margin-bottom: 6px;
+//             }
+//           }
+//           .other{
+//             border: 1px solid lighten($clr8, 20%);
+//             span{
+//               @extend .flex;
+//               padding: 6px 10px;
+//             }
+//           }
+//           .lead_box{
+//             table{
+//               width: $width;
+//               td{
+//                 @extend .cen;
+//                 border: 1px solid lighten($clr8, 20%);
+//                 padding: 6px 10px;
+//               }
+//             }
+//             @media screen and (max-width: 450px){
+//               width: $width;
+//             }
+//           }
+//           @media screen and (max-width: 1024px){
+//             font-size: $fs2;
+//           }
+//           @media screen and (max-width: 450px){
+//             @include wrap;
+//             margin-bottom: 16px;
+//           }
+//         }
+//       }
+//       .pro_price_sets,.customization{
+//         color: $clr8;
+//         span{
+//           color: $clr3;
+//         }
+//       }
+//       .customization,.payment_box{
+//         margin: 1rem 0;
+//         @media screen and (max-width: 1024px){
+//           font-size: $fs2;
+//         }
+//       }
+//       .trade_ass{
+//         @include flex_start;
+//         svg{
+//           margin-right: 6px;
+//         }
+//         a{
+//           color: $clr3;
+//         }
+//         @media screen and (max-width: 1024px){
+//           font-size: $fs2;
+//         }
+//         @media screen and (max-width: 450px){
+//           @include wrap;
+//         }
+//       }
+//       .payment_box{
+//         >p{
+//           @include flex_start;
+//           margin: 10px 0;
+//           &.payments{
+//             span{
+//               margin-right: 6px;
+//             }
+//             a{
+//               border: 1px solid lighten($clr8, 30%);
+//               padding: 4px 10px;
+//             }
+//           }
+//         }
+//         .web_url{
+//           a{
+//             color: $clr8;
+//             margin-right: 6px;
+//           }
+//         }
+//       }
+//       .det_btns{
+//         @include flex_start;
+//         a.iconfont{
+//           @extend .rad1;
+//           @extend .flex;
+//           padding: 10px 30px;
+//           color: $wt;
+//           &:before{
+//             margin-right: 8px;
+//             font-size: $fs4;
+//           }
+//           @media screen and (max-width: 450px){
+//             width: $width;
+//             margin-bottom: 16px;
+//             margin-right: 0;
+//           }
+//         }
+//         .iconcart{
+//           background: lighten($og2, 10%);
+//           margin-right: 1rem;
+//           &:hover{
+//             background: $og1;
+//           }
+//         }
+//         .iconheart-o{
+//           background: $bu2;
+//           &:hover{
+//             background: $bu1;
+//           }
+//         }
+//         @media screen and (max-width: 450px){
+//           @include wrap;
+//         }
+//       }
+//     }
+//     .pic_info_list{
+//       @extend .self;
+//       align-items: flex-start;
+//       @media screen and (max-width: 850px){
+//         width: $width;
+//         margin-bottom: 30px;
+//       }
+//     }
+//     @media screen and (max-width: 850px){
+//       @include wrap;
+//     }
+//   }
+//   .sel_pro_detail{
+//     h4{
+//       font-size: $fs4;
+//       color: $clr5;
+//       margin-bottom: 20px;
+//     }
+//     .sel_pro_det{
+//       font-size: $fs2;
+//       color: $clr8;
+//       line-height: 1.2rem;
+//     }
+//     .det_desc_items{
+//       margin: 2.6%;
+//       margin-right: 0;
+//       li{
+//         list-style: disc;
+//         margin: 6px 0;
+//       }
+//       @media screen and (max-width: 767px){
+//         margin: 30px;
+//         margin-right: 0;
+//       }
+//     }
+//     a{
+//       @extend .ttu;
+//       @include flex_start;
+//       margin-bottom: 16px;
+//       color: $clr3;
+//       text-decoration: underline;
+//     }
+//     .lime_org{
+//       h5{
+//         font-size: $fs2;
+//         color: $clr6;
+//         margin-bottom: 6px;
+//       }
+//       p{
+//         margin-bottom: 1rem;
+//         font-size: $fs;
+//         color: $clr7;
+//         @media screen and (max-width: 450px){
+//           font-size: $fs2;
+//         }
+//       }
+//     }
+//   }
+//   @media screen and (max-width: 1200px){
+//     padding: 30px 20px;
+//   }
+// }
+
+.pro_dets{
+  align-items: flex-start;
+  margin-bottom: 3%;
+  .pro_det_infos,.det_btn_like{
+    background: $wt;
+    padding: 30px;
+  }
+  h4{
+    font-size: $fs3;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $clr4;
+    padding-bottom: 16px;
+  }
+  .pro_det_infos{
+    width: $wid7*2 + $wid14;
+    .pro_main_info{
+      align-items: flex-start;
+      margin-bottom: 3%;
+      .main_info_list{
+        @extend .self;
+        .big_pic{
+          @extend .hide;
+          border: 1px solid $clr9;
+        }
+        .small_pic_box{
+          margin-top: 16px;
+          justify-content: flex-start;
+          .small_pic{
+            width: calc((100% - 50px) / 6);
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid $clr9;
+            &:first-child{
+              margin-left: 0;
+            }
+            &.current{
+              border-color: $bu1;
+            }
+          }
+        }
+        &.left_pic{
+          width: 42%;
+        }
+        &.right_infos{
+          width: 54%;
+        }
+      }
+    }
+    table{
+      th,td{
+        font-size: $fs2;
+        color: lighten($clr4, 20%)
+      }
+      th{
+        font-weight: 400;
+        width: 140px;
+        vertical-align: top;
+      }
+      tr{
+        line-height: 1.8rem;
+      }
+      .has_border{
+        border: 1px solid $clr9;
+        padding: 0 8px;
+      }
+    }
+    .quick_det_box{
+      margin-bottom: 3%;
+      h4{
+        padding: 0 0 10px 10px;
+        border-bottom: 1px solid $clr9;
+      }
+      .quick_items{
+        align-items: flex-start;
+        padding: 10px;
+        li{
+          // width: $wid6;
+          td,th{
+            @extend .hide;
+          }
+          th{
+            width: 110px;
+            color: $clr4;
+          }
+          td{
+            color: lighten($clr4, 40%)
+          }
+          tr{
+            line-height: 2rem;
+          }
+        }
+      }
+    }
+    .pro_detail_box{
+      margin-bottom: 3%;
+      h4{
+        padding: 0 0 10px 10px;
+        border-bottom: 1px solid $clr9;
+      }
+      .inner_details_box{
+        margin: 3% 0;
+        p{
+          padding: 0 10px;
+          font-size: $fs2;
+          color: lighten($clr4, 40%);
+          margin-bottom: 16px;
+          &.det_pic_code{
+            width: $wid7;
+          }
+          &.det_pic_table{
+            width: $wid0;
+          }
+        }
+      }
+    }
+  }
+  .det_btn_like{
+    width: $wid5 - $wid10;
+    .det_btn_box{
+      margin-bottom: 30px;
+      a.iconfont{
+        @extend .rad1;
+        @extend .flex;
+        @extend .margin;
+        width: $width;
+        margin-bottom: 20px;
+        padding: 10px 30px;
+        color: $wt;
+        &:before{
+          margin-right: 8px;
+          font-size: $fs4;
+        }
+        @media screen and (max-width: 450px){
+          width: $width;
+          margin-bottom: 16px;
+          margin-right: 0;
+        }
+      }
+      .iconcart{
+        background: lighten($og2, 10%);
+        margin-right: 1rem;
+        &:hover{
+          background: $og1;
+        }
+      }
+      .iconheart-o{
+        background: $bu2;
+        &:hover{
+          background: $bu1;
+        }
+      }
+      p{
+        font-size: $fs2;
+        color: $clr8;
+      }
+    }
+    .also_like_box{
+      .like_items{
+        margin-top: 20px;
+        .like_list{
+          margin-bottom: 20px;
+          align-items: flex-start;
+          .img{
+            width: $wid6;
+            padding: 4px;
+            border: 1px solid $clr9;
+          }
+          .like_infobox{
+            width: $wid7 + $wid10 + $wid13;
+            h5,p,span{
+              @extend .anim;
+              font-size: $fs2;
+              color: lighten($clr4, 20%);
+            }
+            h5{
+              margin-bottom: 8px;
+            }
+            p{
+              margin: 4px 0;
+            }
+          }
+          &:hover{
+            h5,p,span{
+              color: $bu2;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}
+
+/* pro list css */
+.pro_list_banner{
+  margin: 20px auto;
+}
+.pro_list_content{
+  background: $wt;
+  border: 1px solid $clr9;
+  margin-bottom: 20px;
+  .list_page{
+    padding: 16px 30px;
+    border-bottom: 1px solid $clr9;
+    .down{
+      color: $bu2;
+      i:before{
+        font-size: $fs4;
+        @media screen and (max-width: 550px){
+          font-size: $fs3;
+        }
+      }
+      @media screen and (max-width: 550px){
+        font-size: $fs2;
+      }
+    }
+    .find_page{
+      width: 240px;
+      .found{
+        color: $clr8;
+        b{
+          color: $clr5;
+          margin-right: 6px;
+        }
+        @media screen and (max-width: 550px){
+          font-size: $fs2;
+        }
+      }
+      .page_list{
+        width: 100px;
+        .iconfont{
+          @extend .anim;
+          font-weight: 600;
+          &:hover{
+            color: $og1;
+          }
+        }
+        .current_page{
+          color: $og1;
+        }
+        @media screen and (max-width: 550px){
+          width: 80px;
+        }
+      }
+      .pager{
+        @media screen and (max-width: 550px){
+          font-size: $fs2;
+        }
+      }
+      @media screen and (max-width: 550px){
+        width: 190px;
+      }
+    }
+    @media screen and (max-width: 900px){
+      padding: 16px 20px;
+    }
+  }
+  .pro_list_items{
+    li{
+      padding: 16px 30px;
+      width: $width;
+      border-bottom: 1px solid $clr9;
+      >a,>div{
+        @extend .self;
+        align-items: flex-start;
+      }
+      .list_list_pic{
+        width: 180px;
+        border: 1px solid $clr9;
+        @media screen and (max-width: 1024px){
+          width: 140px;
+        }
+        @media screen and (max-width: 900px){
+          width: 120px;
+        }
+        @media screen and (max-width: 550px){
+          width: $width;
+        }
+      }
+      .list_list_cont{
+        display: $flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+        padding: 0 20px;
+        border-right: 1px solid $clr9;
+        h4{
+          font-size: $fs4;
+          color: $bu2;
+          font-weight: 400;
+        }
+        .qty_posted{
+          @include flex-start;
+          p{
+            font-size: $fs2;
+            color: $clr8;
+            margin-right: 1rem;
+            span{
+              color: $clr3;
+            }
+            @media screen and (max-width: 767px){
+              font-size: $fs1;
+            }
+          }
+          @media screen and (max-width: 900px){
+            @include wrap;
+          }
+          @media screen and (max-width: 550px){
+            margin: 10px 0 8px;
+          }
+        }
+        .list_list_desc{
+          font-size: $fs;
+          color: $clr7;
+          @media screen and (max-width: 1024px){
+            -webkit-line-clamp: 2;
+          }
+          @media screen and (max-width: 900px){
+            font-size: $fs2;
+          }
+        }
+        time{
+          font-size: $fs2;
+          color: $clr8;
+          @media screen and (max-width: 767px){
+            font-size: $fs1;
+          }
+          @media screen and (max-width: 550px){
+            margin-top: 8px;
+          }
+        }
+        @media screen and (max-width: 900px){
+          padding: 0 14px;
+        }
+        @media screen and (max-width: 550px){
+          width: $width;
+          padding: 0;
+          margin: 20px 0;
+          flex: none;
+          border: none;
+        }
+      }
+      .publisher{
+        width: $wid12;
+        padding-left: 20px;
+        display: $flex;
+        flex-direction: column;
+        .posted{
+          @extend .flex;
+          @include flex_start;
+          margin-bottom: 1rem;
+          width: $width;
+          a{
+            @extend .rad5;
+            @extend .hide;
+            width: 28px;
+            height: 28px;
+            border: 1px solid $clr9;
+            margin-right: 10px;
+            @media screen and (max-width: 900px){
+              margin-right: 0;
+            }
+          }
+          span{
+            @media screen and (max-width: 900px){
+              @include flex;
+              width: $width;
+              justify-content: center;
+              margin-top: 6px;
+              font-size: $fs2;
+            }
+          }
+          @media screen and (max-width: 900px){
+            @include wrap;
+            justify-content: center;
+            margin-bottom: 0;
+          }
+          @media screen and (max-width: 550px){
+            @include none;
+          }
+        }
+        .quote{
+          @extend .flex;
+          flex: 1;
+          width: $width;
+          a{
+            @extend .rad1;
+            background: lighten($og2, 10%);
+            color: $wt;
+            width: 140px;
+            height: 36px;
+            &:hover{
+              background: $og1;
+            }
+            @media screen and (max-width: 900px){
+              height: 30px;
+              font-size: $fs2;
+            }
+          }
+        }
+        @media screen and (max-width: 1024px){
+          width: 140px;
+        }
+        @media screen and (max-width: 900px){
+          width: 120px;
+          padding-left: 14px;
+        }
+        @media screen and (max-width: 550px){
+          padding-left: 0;
+        }
+      }
+      @media screen and (max-width: 900px){
+        padding: 16px 20px;
+      }
+      @media screen and (max-width: 550px){
+        @include wrap;
+      }
+    }
+  }
+}
+.related_box{
+  background: $wt;
+  border: 1px solid $clr9;
+  padding: 30px;
+  margin-bottom: 20px;
+  h4{
+    @extend .ttu;
+    margin-bottom: 1rem;
+  }
+  .rel_pros{
+    @extend .margin;
+    // width: $wid1;
+    .rel_pros{
+      width: 20%;
+      background: $wt;
+      .plist_cont{
+        padding: 10px;
+        p{
+          margin-bottom: 10px;
+          color: $clr6;
+        }
+        a{
+          @include flex-start;
+          margin-bottom: 6px;
+          &.iconfont{
+            &:before{
+              margin-right: 4px;
+            }
+          }
+          &.supplier{
+            color: $og1;
+            &:before{
+              font-size: $fs5;
+              color: $og1;
+            }
+          }
+          &.chat{
+            color: $bu1;
+            &:before{
+              font-size: $fs4;
+              color: $bu1;
+              transform: rotateY(180deg);
+            }
+          }
+        }
+      }
+      .swiper-button-prev,.swiper-button-next{
+        &:before{
+          font-size: $fs7!important;
+        }
+        &:after{
+          content:'';
+        }
+      }
+    }
+  }
+}
+
+/* news css */
+.news_nav{
+  margin: 30px auto;
+  a{
+    @include news_btn;
+    &:hover{
+      background: $bu2;
+    }
+    @media screen and (max-width: 500px){
+      margin: 8px;
+    }
+  }
+  @media screen and (max-width: 600px){
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 500px){
+    @include wrap;
+    justify-content: center;
+  }
+}
+.news_recommend{
+  margin: 40px auto;
+  li{
+    @extend .rel;
+    @extend .hide;
+    width: $wid6;
+    border: 1px solid $clr9;
+    .news_rem_pic{
+      i{
+        @extend .anim;
+        @extend .abs;
+        @extend .flex;
+        top: 1rem;
+        right: -3rem;
+        width: 36px;
+        height: 36px;
+        background: rgba(255,255,255,.4);
+        border: 2px solid $wt;
+        &:before{
+          font-size: $fs5;
+          color: $wt;
+        }
+        &:hover{
+          border-color: $bu1;
+          background: $bu1;
+        }
+      }
+    }
+    .new_rem_infos{
+      @extend .abs;
+      @include news_temp;
+      @extend .anim2;
+      display: $flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      width: $width;
+      height: $width;
+      top: 0;
+      left: 0;
+      background: $wt;
+      padding: 30px 40px;
+      h5{
+        @extend .anim2;
+        color: $clr8;
+        font-weight: 400;
+        @media screen and (max-width: 767px){
+          margin-top: -20px;
+        }
+      }
+      h3{
+        @media screen and (max-width: 767px){
+          margin-top: -10px;
+        }
+      }
+      p{
+        @media screen and (max-width: 1300px){
+          -webkit-line-clamp: 2;
+        }
+        @media screen and (max-width: 767px){
+          -webkit-line-clamp: 1;
+          margin-top: -10px;
+        }
+        @media screen and (max-width: 600px){
+          -webkit-line-clamp: 3;
+          margin-top: 0px;
+        }
+        @media screen and (max-width: 400px){
+          -webkit-line-clamp: 1;
+        }
+      }
+      @media screen and (max-width: 1300px){
+        padding: 25px 30px;
+      }
+    }
+    &:hover{
+      .news_rem_pic i{
+        right: 1rem;
+      }
+      .new_rem_infos{
+        top: 100px;
+        background: rgba(0,109,173,.8);
+        h5,h3,p,time{
+          color: $wt;
+        }
+        @media screen and (max-width: 767px){
+          top: 80px;
+        }
+        @media screen and (max-width: 600px){
+          top: 100px;
+        }
+      }
+    }
+    @media screen and (max-width: 1024px){
+      width: $wid4;
+      &:last-child{
+        @include none;
+      }
+    }
+    @media screen and (max-width: 600px){
+      width: $width;
+      margin-bottom: 30px;
+    }
+  }
+  @media screen and (max-width: 600px){
+    @include wrap;
+  }
+}
+.sel_news{
+  margin: 6% auto;
+  .sel_news_hd{
+    margin: 4% auto;
+    h4{
+      @extend .cen;
+      font-size: $fs6;
+      font-weight: 400;
+      color: $clr6;
+      
+    }
+  }
+  .sel_news_items{
+    .sel_news_list{
+      @extend .anim;
+      background: $wt;
+      padding: 16px;
+      border-left: 3px solid transparent;
+      margin: 10px 0 30px;
+      .sel_news_pic,.sel_news_info,.view_more{
+        @extend .self;
+        align-items: flex-start;
+      }
+      .sel_news_pic,.view_more{
+        width: 240px;
+        @media screen and (max-width: 1200px){
+          width: 180px;
+          flex-shrink: 0;
+        }
+        @media screen and (max-width: 850px){
+          width: 140px;
+        }
+        @media screen and (max-width: 700px){
+          width: $width;
+        }
+      }
+      .sel_news_info{
+        @include news_temp;
+        @extend .anim;
+        display: $flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 0 40px;
+        h3{
+          -webkit-line-clamp: 1!important;
+        }
+        p{
+          -webkit-line-clamp: 2!important;
+          @media screen and (max-width: 1200px){
+            margin-bottom: 0;
+          }
+          @media screen and (max-width: 700px){
+            margin: 16px 0;
+          }
+        }
+        @media screen and (max-width: 1200px){
+          padding-left: 20px;
+          padding-right: 0;
+        }
+        @media screen and (max-width: 700px){
+          margin: 30px 0;
+          padding: 0;
+        }
+      }
+      .view_more{
+        align-items: center;
+        a{
+          @include news_btn;
+          background: transparent;
+          border: 1px solid $bu1;
+          color: $bu1;
+          @media screen and (max-width: 1200px){
+            width: 130px;
+            height: 36px;
+            font-size: $fs2;
+          }
+        }
+        @media screen and (max-width: 700px){
+          margin-bottom: 10px;
+        }
+      }
+      &:hover{
+        border-color: $bu1;
+        .sel_news_info{
+          margin-left: 1rem;
+        }
+        .view_more a{
+          background: $bu1;
+          color: $wt;
+        }
+      }
+      @media screen and (max-width: 700px){
+        @include wrap;
+      }
+      
+    }
+  }
+}
+
+/* help center css */
+.help_center{
+  @extend .rel;
+  margin: 40px auto;
+  align-items: flex-start;
+  .iconcaidan{
+    @include none;
+    @extend .rad5;
+    @extend .fix;
+    z-index: 999;
+    top: 234px;
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    background: $wt;
+    &:before{
+      color: $bu1;
+      font-size: $fs4;
+    }
+    @media screen and (max-width: 850px){
+      display: $flex;
+    }
+  }
+  .help_aside,.help_main{
+    background: $wt;
+  }
+  .help_aside{
+    width: 250px;
+    margin-right: 20px;
+    padding-bottom: 16px;
+    h4,.aside_list{
+      @extend .flex_ai;
+      justify-content: flex-start;
+      color: $wt;
+      font-weight: 400;
+      &:before{
+        font-size: $fs5;
+        margin-right: 6px
+      }
+    }
+    h4{
+      background: $bu1;
+      padding: 0 16px;
+      height: 40px;
+      margin-bottom: 10px;
+      font-size: $fs3;
+    }
+    .aside_list{
+      @extend .wrap;
+      a{
+        @extend .flex-sb;
+        @extend .anim;
+        width: $width;
+        padding: 10px 16px;
+        color: $clr8; 
+        span{
+          @extend .fhd1;
+        }
+        &:hover{
+          color: $bu1;
+        }
+      }
+      .help_sub{
+        width: $width;
+        margin-left: 12px;
+        a{
+          padding: 5px 16px;
+          font-size: $fs2;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 850px){
+      @include anim1;
+      position: fixed;
+      left: -$width;
+    }
+  }
+  .help_main{
+    flex: 1;
+    padding: 20px;
+    .news_main_items{
+      .news_main_list{
+        @extend .anim;
+        list-style: disc;
+        margin-left: 20px;
+        color: $clr7;
+        a{
+          @extend .anim;
+          justify-content: flex-start;
+          padding: 14px 0;
+          color: $clr7;
+        }
+        &:hover{
+          color: $bu1;
+          a{
+            color: $bu1;
+          }
+        }
+      }
+    }
+    .news_page{
+      margin-top: 40px;
+      justify-content: flex-end;
+      a{
+        @extend .anim;
+        @extend .rad1;
+        width: 30px;
+        height: 30px;
+        margin: 4px;
+        border: 1px solid $clr9;
+        font-size: $fs2;
+        color: $clr8;
+        &.disabled{
+          color: $clr9;
+        }
+        &.current_num,&:hover{
+          // background: $bu2;
+          border-color: $bu2;
+          color: $bu2;
+        }
+      }
+    }
+  }
+  
+}
+
+
+// page css
+.sel_page_box{
+  margin: 3% auto;
+  padding: 3%;
+  background: $wt;
+  .page_cont_items{
+    margin-bottom: 16px;
+    .page_cont_list{
+      width: $wid5;
+      h4{
+        color: lighten($clr4, 20%);
+        font-size: $fs5;
+        margin-bottom: 20px;
+        &.company{
+          color: $clr4;
+        }
+      }
+      p{
+        font-size: $fs;
+        color: lighten($clr4, 20%);
+        line-height: 1.8rem;
+        &.contact_info{
+          color: $clr4;
+          margin: 8px 0;
+          a{
+            @extend .anim;
+            display: inline-flex;
+            color: $clr4;
+            &:hover{
+              color: $bu1;
+            }
+          }
+        }
+      }
+      .email{
+        padding: 8px 0;
+        color: $wt;
+        background: $bu1;
+        width: 260px;
+        &:before{
+          margin-right: 10px;
+        }
+      }
+      @media screen and (max-width: 1024px){
+        width: $width;
+        margin-bottom: 20px;
+        img{
+          width: auto;
+        }
+      }
+      @media screen and (max-width: 650px){
+        img{
+          width: 100%;
+        }
+      }
+    }
+    &.reverse{
+      flex-direction: row-reverse;
+    }
+    &.contact_box{
+      margin: 0;
+    }
+    @media screen and (max-width: 1024px){
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+  }
+  hr{
+    margin: 40px 0;
+    opacity: 0.3;
+  }
+
+}
+
+.post_buying_box{
+  .post_buy{
+    background: $wt;
+    padding: 30px;
+    margin-bottom: 2%;
+    h4{
+      color: $clr4;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #eee;
+    }
+    form{
+      // padding: 10px 0;
+    }
+    label{
+      justify-content: flex-start;
+      // align-items: flex-start;
+      margin: 16px 0;
+      b,p{
+        display: inline-flex;
+      }
+      b{
+        color: red;
+        font-size: $fs4;
+        vertical-align: top;
+        margin-right: 4px;
+      }
+      p{
+        color: #7b7b7b;
+        font-size: $fs2;
+      }
+      .label_tit{
+        margin-right: 20px;
+        width: 10%;
+        text-align: right;
+      }
+      .label_box{
+        width: $wid3;
+        input,select,textarea{
+          border: 1px solid lighten($clr4, 60%);
+          padding: 0 10px;
+          color: #7b7b7b;
+          width: $wid5;
+        }
+        input,select{
+          height: 1.8rem;
+        }
+        input[name="pro_name"],textarea{
+          width: $width;
+        }
+        input[type=number]{
+          padding-right: 0;
+        }
+        &.lead_time{
+          justify-content: flex-start;
+          input{
+            width: 60px;
+            margin: 0 10px;
+          }
+        }
+      }
+      .upload_pic{
+        p{
+          flex-direction: column;
+          position: relative;
+          width: 120px;
+          height: 120px;
+          background: url(../assets/images/dashed.svg)no-repeat center center/cover;
+          &:before{
+            font-size: 24px;
+            margin-bottom: 4px;
+          }
+          input{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            font-size: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+          }
+        }
+        span{
+          font-size: $fs2;
+          display: block;
+          margin-top: 8px;
+          color: lighten($clr4, 40%);
+        }
+      }
+      &.text_det,&.annex{
+        align-items: flex-start;
+      }
+    }
+  }
+  .post_buy_btn{
+    @extend .rad5;
+    background: $bu1;
+    color: $wt;
+    width: 160px;
+    height: 36px;
+    color: $fs;
+  }
+}

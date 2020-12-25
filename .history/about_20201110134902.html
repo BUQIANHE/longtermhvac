@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABOUT</title>
+  <!--  css link-->
+  <link rel="stylesheet" href="css/main.min.css">
+
+  <!--  js link-->
+  <script src="js/jquery-1.9.12.min.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/other.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+</head>
+<body>
+  <!--  header -->
+  <header class="hd">
+    <div class="inner_hd hei">
+      <div class="pc_nav_box hei" v-if="screenWidth >= 767">
+        <ul class="top_nav flex-sb wid">
+          <li class="top_nav_list list_logo">
+            <a href="index.html" class="logo"><img src="assets/images/logo.jpg" alt="logo"></a>
+          </li>
+          <li class="topp_nav_list list_form">
+            <form action="" class="flex-sb">
+              <input type="text" placeholder="What are you looking for..." name="keys" id="search_key">
+              <button class="search_ico"><i class="iconfont iconsearch"></i></button>
+            </form>
+          </li>
+          <li class="top_nav_list flex-sb list_items">
+            <a href="login.html" class="ico_list"><i class="iconfont iconsvg-13"></i><span class="icon_txt">Login</span></a>
+            <a href="ike.html" class="ico_list"><i class="iconfont iconheart-o"></i><span class="icon_txt">Wish list</span></a>
+            <a href="cart.html" class="ico_list"><i class="iconfont iconcart"></i><span class="icon_txt">Cart</span></a>
+          </li>
+          <li class="top_nav_list mob_ico"><i class="iconfont icon-menu"></i></li>
+        </ul>
+        <ul class="top_nemu flex-sb wid">
+          <li class="top_menu_list flex-sb cate_items">
+            <i class="iconfont iconcaidan"></i>
+            <a class="cate">Categories</a>
+            <i class="iconfont iconangle-down"></i>
+            <ul class="cls_items">
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Refrigeration Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Air Conditioner</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Ventilation System</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Heating Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Assembly Supplies</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Tools and Equipment</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Miscellaneous</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">All Categories</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu_list flex-sb inner_pg">
+            <a href="" class="list_pg">Buying on Unitecool</a>
+            <a href="" class="list_pg">Sell on Unitecool</a>
+            <a href="" class="list_pg">News & Events</a>
+            <a href="" class="list_pg">Help Center</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile_nav_box" v-cloak v-else>
+        <ul class="mob_nav_items flex-sb hei wid">
+          <li class="mob_nav_list flex hei categories">
+            <i class="iconfont iconmenu"></i>
+            <!-- <a class="mob_nav_txt">Categories</a> -->
+
+            <ul class="cls_items">
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Refrigeration Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Air Conditioner</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central</a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Ventilation System</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Heating Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Assembly Supplies</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Tools and Equipment</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Miscellaneous</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">All Categories</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="mob_nav_list list_logo hei">
+            <a href="index.html" class="logo flex"><img src="assets/images/logo.jpg" alt="logo"></a>
+          </li>
+          <li class="mob_nav_list flex hei page_menu">
+            <!-- <a class="mob_nav_txt">Menu</a> -->
+            <i class="iconfont iconmenu1"></i>
+
+            <ul class="page_items cls_items">
+              <li class="user_cart list_items flex-sb">
+                <a href="login.html" class="ico_list"><i class="iconfont iconsvg-13"></i><span class="icon_txt">Login</span></a>
+                <a href="ike.html" class="ico_list"><i class="iconfont iconheart-o"></i><span class="icon_txt">Wish list</span></a>
+                <a href="cart.html" class="ico_list"><i class="iconfont iconcart"></i><span class="icon_txt">Cart</span></a>
+              </li>
+              <li class="page_list inner_pg">
+                <a href="" class="list_pg">Buying on Unitecool</a>
+                <a href="" class="list_pg">Sell on Unitecool</a>
+                <a href="" class="list_pg">News & Events</a>
+                <a href="" class="list_pg">Help Center</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+  
+        <div class="mob_search list_form hei wid">
+          <form action="" class="flex-sb">
+            <input type="text" placeholder="What are you looking for..." name="keys" id="search_key">
+            <button class="search_ico"><i class="iconfont iconsearch"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- road nav -->
+  <div class="road_nav flex wid">
+    <a href="" class="home">Home</a>
+    <i class="iconfont iconangle-right"></i>
+    <span class="road_txt">About Long Term</span>
+  </div>
+
+  <section class="sel_page_box wid ">
+    <ul class="page_cont_items">
+      <li class="page_cont_list">
+        <h4>About Long Term</h4>
+        <p>Long Term Elec. Co., Ltd established in 2003 in Ningbo,which is a leading company specialized in HVAC and electrical area, and also the agent of many Chinese factories. With years' experience, now Long Term can provide various of products with competitive price. We have built a stable factory which clearly knows the importance of quality. The products we supply are well structured, various styles, great appearance and high quality. </p>
+      </li>
+      <li class="page_cont_list">
+        <img src="assets/images/about_pic1.jpg" alt="">
+      </li>
+    </ul>
+    <ul class="page_cont_items">
+      <li class="page_cont_list">
+        <h4>Our Advantage</h4>
+        <p>In 2017, Ningbo Long Term Control Co.,Ltd is established. We adopt advanced production technology and high accurate machine for production. Our factory owns dozens of huge and middle CNC horizontal machining centers made by Japan Kuraki, our mean products are Water Heater Thermostat, Snap Action Thermostat ,Defrost Thermostat and Sequencer with UL Certificate. Meanwhile, we have professional team for inspection who are responsible for ensuring that all operations are conducted in line with ISO9001 standards. Welcome to send us drawings of the products you need.</p>
+      </li>
+      <li class="page_cont_list">
+        <img src="assets/images/about_pic2.jpg" alt="">
+      </li>
+    </ul>
+    <ul class="page_cont_items">
+      <li class="page_cont_list">
+        <h4>Quality Assurance</h4>
+        <p>We have achieved UL certificate for US market. UPS, NSF, ROSHS,etc certificate. We have enjoyed a high reputation among our customers owing to the high quality, competitive prices, prompt delivery and excellent service. Our products are now exported to Europe,North America,South America,etc. We have sole agents in Indonesia, Argentina, Kuwait, etc. <br> In 2019, Long Term becomes the refrigerant exportation department of Juhua Group Corporation in Ningbo. </p>
+      </li>
+      <li class="page_cont_list">
+        <img src="assets/images/about_pic3.jpg" alt="">
+      </li>
+    </ul>
+    <ul class="page_cont_items">
+      <li class="page_cont_list">
+        <h4>Company Culture</h4>
+        <p>Adhering to the principles of "Quality ensures Our Survival", "Advanced Management Makes Us Develop", we hope to cooperate with all partners for mutual success.Should you favor us with inquiries for your specific requirements, please feel free to contact us and we are in a position to supply you with first class goods at competitive prices. Your earliest attention will be highly appreciated!</p>
+      </li>
+      <li class="page_cont_list">
+        <img src="assets/images/about_pic4.jpg" alt="">
+      </li>
+    </ul>
+  </section>
+
+
+
+
+  <section class="account_wish">
+    <ul class="aw_items wid">
+      <div class="aw_inner flex-sb">
+        <li class="aw_list flex">
+          <i class="iconfont iconsvg-12"></i>
+          <div class="ico_info">
+            <h6>Help Center</h6>
+            <p>Ask questions & get instant answers</p>
+          </div>
+        </li>
+        <li class="aw_list flex">
+          <i class="iconfont iconsvg-13"></i>
+          <div class="ico_info">
+            <h6>My Account</h6>
+            <p>Manage your information & settings</p>
+          </div>
+        </li>
+        <li class="aw_list flex">
+          <i class="iconfont iconheart-o"></i>
+          <div class="ico_info">
+            <h6>Wish List</h6>
+            <p>Tell everyone what you want</p>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <ul class="footer_items flex-sb wid">
+      <li class="foot_list">
+        <h4 class="foot_tit">NEWSLETTER</h4>
+        <p>Join beiduo lovers and get our latest parts <br>& resources sent right to your inbox. </p>
+        <form action="">
+          <input type="text" name="newsletter_name"  placeholder="Your name">
+          <input type="text" name="newsletter_email" placeholder="Your email">
+          <button class="newsletter_btn">SUBMIT</button>
+        </form>
+        <div class="social_link">
+          <a href=""><i class="iconfont iconfacebook"></i></a>
+          <a href=""><i class="iconfont icontwitter"></i></a>
+          <a href=""><i class="iconfont iconlinkedin-square"></i></a>
+          <a href=""><i class="iconfont iconinstagram"></i></a>
+          <a href=""><i class="iconfont iconpinterest-p"></i></a>
+        </div>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">Buying on Unitecool</h4>
+        <a href="">Post Buying Leads</a>
+        <a href="">For Buyers</a>
+        <a href="">New Users</a>
+        <a href="">Feedback</a>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">ABOUT UNITECOOL</h4>
+        <a href="">News & Events</a>
+        <a href="">About Unitecool</a>
+        <a href="">Contact Unitecool</a>
+        <a href="">Sitemap</a>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">Help Center</h4>
+        <a href="">Instructions </a>
+        <a href="">Rules & Policies</a>
+        <a href="">Guide</a>
+        <a href="">Activity</a>
+      </li>
+    </ul>
+  </footer>
+
+  <div class="copyright">
+    <ul class="cpy_items flex-sb wid">
+      <li class="cpy_list cpy_txt">Copyright © 2003-2020 UNITECOOL All rights reserved.</li>
+      <li class="cpy_list flex-sb">
+        <a href="">Privacy Policy</a>
+        <a href="" class="link_cent">Secure Shopping</a>
+        <a href="">XML</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+
+    /* ============= vue js ============= */
+    // header js
+    const mv = new Vue({
+
+      el: '.hd',
+
+      data: {
+        
+        screenWidth: document.body.clientWidth,
+
+      }
+
+    })
+  </script>
+
+</body>
+</html>

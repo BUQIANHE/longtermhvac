@@ -1,0 +1,1111 @@
+@import "_var.scss";
+//@import "_iconfont.scss";
+@import "_reset.scss";
+@import "_common.scss";
+@import "_include.scss";
+@import "_bxslide.scss";
+
+@import url(https://at.alicdn.com/t/font_2103864_kqc6swc1npr.css);
+
+body{
+  background: $clr10;
+}
+
+/* header css */
+.hd{
+  height: 120px;
+  @extend .rel;
+  z-index: 999;
+  .inner_hd{
+    @extend .fix;
+    height: 120px;
+    width: $width;
+    background: $wt;
+    box-shadow: 0 2px 1px rgba(0,0,0,.1);
+    .top_nav{
+      height: $wid10 + $wid3;
+    }
+    .top_nemu{
+      height: $wid10 + $wid14;
+    }
+  }
+
+  .list_logo{
+    width: 84px;
+  }
+  .list_form{
+    width: $wid5;
+    margin-right: $auto;
+    margin-left: 3%;
+    form{
+      @extend .rad2;
+      border: 1px solid $clr7;
+      height: 2.5rem;
+      padding: 0 10px;
+      input,button{
+        height: 2.5rem;
+      }
+      input{
+        flex: 1;
+        &::placeholder{
+          color: lighten($clr7, 20%);
+        }
+      }
+      button{
+        i:before{
+          font-size: $fs4;
+          font-weight: 600;
+          color: $bk;
+        }
+      }
+    }
+  }
+  .list_items{
+    width: 200px;
+    .ico_list{
+      @extend .flex-clo;
+      .iconfont:before,.icon_txt{
+        color: $clr2;
+      }
+      .iconfont:before{
+        font-size: $fs1 + $fs2;
+        font-weight: 500;
+
+      }
+      .icon_txt{
+        font-size: $fs2;
+        padding-top: 4px;
+        // @media screen and (max-width: 1024px){
+        //   @include none;
+        // }
+      }
+    }
+    .list_nav{
+      font-size: $fs;
+      color: $clr3;
+      &.list_detect{
+        @include btn1;
+      }
+    }
+    @media screen and (max-width: 1024px){
+      width: 150px;
+    }
+    // @media screen and (max-width: 767px){
+    //   position: absolute;
+    //   top: $width;
+    //   left: 100%;
+    //   width: $width;
+    //   flex-direction: column;
+    //   align-items: flex-start;
+    //   padding: 20px 3%;
+    //   background:$wt;
+    //   @include anim2;
+    //   a{
+    //     padding: 10px 0;
+    //   }
+    //   &.move{
+    //     left: 0;
+    //   }
+    // }
+  }
+
+  .top_menu_list{
+    @extend .hei;
+    padding-bottom: 6px;
+    &.cate_items{
+      @extend .rel;
+      width: 114px;
+      .cls_items{
+        @extend .abs;
+        display: none;
+        top: $width;
+        left: -20px;
+        width: 240px;
+        background: $wt;
+        padding: 10px;
+        li{
+          padding: 8px 10px;
+          .pro_cls_dp{
+            top: 0;
+            left: $width;
+            height: calc(100% + 1px);
+          }
+          &:hover{
+            >a{
+              color: $bu1;
+            }
+          }
+        }
+        a{
+          @extend .anim;
+          margin: 0;
+        }
+      }
+    }
+    &.inner_pg{
+      margin-left: 20px;
+      margin-right: auto;
+      width: 540px;
+      .list_pg{
+        font-weight: 600;
+        color: $clr2;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      @media screen and (max-width: 767px){
+        // position: absolute;
+        // top: $width;
+        // right: 0;
+        // display: $flex;
+        // flex-direction: column;
+        // justify-content: space-evenly;
+        // background: #fff;
+        // width: 200px;
+        // height: auto;
+        // padding: 14px;
+        // margin-left: 0;
+        // a{
+        //   justify-content: flex-start;
+        //   width: $width;
+        //   padding: 8px 0;
+        // }
+      }
+    }
+
+    a{
+      font-size: $fs2;
+      &.cate{
+        color: lighten($clr7, 10%);
+      }
+    }
+    .iconfont:before{
+      font-size: $fs3;
+      color: lighten($clr7, 10%);
+    }
+  }
+  .page_menu{
+    @extend %none;
+    .iconfont{
+      transform: rotateY(180deg);
+      &:before{
+        font-size: $fs5;
+      }
+    }
+    @media screen and (max-width: 767px){
+      display: $flex;
+    }
+  }
+
+  .mobile_nav_box{
+    @extend .hei;
+    .mob_nav_items{
+      height: $wid3 + $wid10;
+      padding: 10px 0;
+      i.iconfont{
+        &:before{
+          font-size: 30px;
+          color: $clr6;
+        }
+      }
+    }
+    .mob_search{
+      height: $wid7;
+    }
+  }
+
+
+
+
+}
+
+/* banner on search css */
+.search_box{
+  @extend .abs;
+  z-index: 888;
+  width: $width;
+  height: 70px;
+  background: rgba(darken($bu1, 30%),0.6);
+  .search_inner_box{
+    padding: 14px 20px;
+    select,input,button{
+      flex-grow: 1;
+      height: $width;
+
+    }
+    select,input{
+      background: $wt;
+      margin-right: 1px;
+      padding: 0 8px;
+      color: $clr2;
+      font-size: $fs2;
+    }
+    .search_btn,.share_btn{
+      @extend .flex;
+      @extend .rad1;
+      color: $wt;
+      .iconfont:before{
+        font-size: $fs5;
+        margin-right: 8px;
+        @media screen and (max-width: 1024px){
+          margin-right: 0;
+        }
+      }
+      span{
+        font-size: $fs2;
+        font-weight: 600;
+        @media screen and (max-width: 1024px){
+          @include none;
+        }
+      }
+    }
+    .search_btn{
+      background: $og1;
+      margin: 0 10px;
+    }
+    .share_btn{
+      background: $bu1;
+    }
+    @media screen and (max-width: 1200px){
+      padding: 14px 0;
+    }
+  }
+
+}
+
+/* pro trade css */
+.pros_trade{
+  background: $wt;
+  border-bottom: 1px solid $clr8;
+  padding: 20px 12px;
+  margin-bottom: 1%;
+
+  h4{
+    @extend .ttu;
+    width: $width;
+    font-size: $fs2;
+    color: $clr2;
+    padding-bottom: 10px;
+    &.cls_tit{
+      border-bottom: 1px solid $clr9;
+      padding-bottom: 9px;
+    }
+  }
+  .model_list{
+    @extend .self;
+    display: $flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    &.hot_pro{
+      flex: 3;
+      margin: 0 40px;
+    }
+    &.pro_cls{
+      flex: 1;
+      .cls_items{
+        margin-top: 1rem;
+      }
+    }
+    &.trade_show{
+      flex: 1.2;
+    }
+  }
+
+  .hot_pro_items{
+    @extend .wrap;
+    flex: 1;
+    .ml_list{
+      @extend .flex-clo;
+      @extend .self;
+      @extend .hide;
+      justify-content: space-between;
+      width: $wid9;
+      margin-bottom: 1rem;
+      .hot_pro_pic{
+        @extend .anim;
+        width: $width;
+      }
+      .hot_pro_txt{
+        @extend .anim;
+        margin-top: 20px;
+        margin-bottom: auto;
+        color: $clr7;
+        font-size: $fs2;
+      }
+      &:nth-child(-n+7):nth-child(n+5){
+        margin-bottom: 0;
+      }
+      &:hover{
+        .hot_pro_pic{
+          margin-left: 10px;
+        }
+        .hot_pro_txt{
+          color: $og1;
+        }
+      }
+    }
+  }
+  
+}
+.pro_cls_items{
+  @extend .flex-sb;
+  @extend .anim;
+  background: $wt;
+  padding: 8px 0;
+  border: 1px solid transparent;
+  .cls_txt,.iconfont{
+    color: $clr6;
+  }
+  .cls_txt{
+    margin: 0 1rem;
+    font-size: $fs2;
+  }
+  .custom_ico:before{
+    font-size: $fs4;
+  }
+  .iconangle-right{
+    margin-left: auto;
+  }
+  &:hover{
+    margin-left: 10px;
+    padding: 8px;
+    border-color: $bu1;
+    border-right: none;
+    >.pro_cls_dp{
+      display: flex;
+    }
+  }
+}
+.cls_items,.show_box{
+  @extend .self;
+  flex: 1;
+  display: $flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  .ml_list{
+    width: $width;
+    h5,h6{
+      font-weight: 600;
+      color: $clr2;
+    }
+    h5{
+      font-size: $fs;
+      margin-bottom: 6px;
+    }
+    h6{
+      font-size: $fs2;
+      margin-bottom: 1rem;
+    }
+    p{
+      font-size: $fs2;
+      color: $clr7;
+    }
+    a.view_more{
+      @extend .anim;
+      background: $bu1;
+      font-size: $fs2;
+      color: $wt;
+      display: inline-block;
+      padding: 6px 12px;
+      margin-top: 1rem;
+      &:hover{
+        background: lighten($bu1, 10%)
+      }
+    }
+  }
+}
+.cls_items{
+  @extend .rel;
+  z-index: 890;
+  .pro_cls_dp{
+    @extend .abs;
+    @extend .flex-sb;
+    @extend .wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    display: none;
+    top: -1rem;
+    left: calc(100% + 9px);
+    z-index: -1;
+    width: 610px;
+    height: calc(100% + 1rem);
+    background: $wt;
+    border: 1px solid $bu1;
+    padding: 20px;
+    >a{
+      @extend .fhd1;
+      @extend .anim;
+      width: 180px;
+      font-size: $fs2;
+      justify-content: flex-start;
+      padding: 8px 0;
+      white-space: nowrap;
+      color: $clr7;
+      margin-left: 12px;
+      &:hover{
+        color: $og1;
+      }
+      &:nth-child(-n+9):nth-child(n){
+        margin-left: 0;
+      }
+    }
+  }
+  
+}
+
+.cls_switch_box{
+  margin: 2% auto;
+  .cls_tit{
+    background: $wt;
+    a{
+      @extend .flex;
+      @extend .cen;
+      @extend .hei;
+      flex: 1;
+      padding: 14px 0;
+      font-size: $fs2;
+      font-weight: 600;
+      color: $clr3;
+      &.active{
+        @extend .rel;
+        background: $og1;
+        color: $wt;
+        &:before{
+          @extend .abs;
+          content:'\e639';
+          top: $width;
+          color: $og1;
+          font-size: $fs5;
+          transform: translateY(-42%);
+        }
+      }
+    }
+  }
+
+  .cls_infos{
+    margin-top: 8px;
+    .left_img,.cls_infos_items{
+      @extend .self;
+    }
+    .left_img{
+      flex: 1;
+    }
+    .cls_infos_items{
+      @extend .wrap;
+      flex: 5;
+      .cls_info_list{
+        @extend .hide;
+        @extend .self;
+        background: $wt;
+        margin-bottom: 8px;
+        p,a{
+          @extend .anim;
+        }
+        p{
+          @extend .cen;
+          font-size: $fs2;
+          color: $clr7;
+          margin-top: 10px;
+        }
+        &:nth-child(-n+10):nth-child(n+6){
+          margin-bottom: 0;
+        }
+        &:hover{
+          a{
+            transform: scale(1.1);
+          }
+          p{
+            color: $og1;
+          }
+        }
+      }
+
+    }
+    
+  }
+}
+
+/* buy demand css */
+.buy_demand{
+  @extend .rel;
+  @extend .hide;
+  .demand_box{
+    @extend .abs;
+    @extend .hei;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    justify-content: flex-end;
+    .demand_form{
+      @extend .wrap;
+      width: $wid3;
+      background: url(../assets/images/in_bg.png)no-repeat center center/cover;
+      .demand_form_info{
+        width: $wid5 + $wid14;
+        margin-left: 6%;
+        h4{
+          font-size: $fs6;
+          color: $clr3;
+          margin-bottom: 12px;
+        }
+        label{
+          @extend .flex-sb;
+          margin-bottom: 1rem;
+          font-size: $fs;
+          color: $clr3;
+          input,select{
+            border: 1px solid $clr7;
+            height: 1.8rem;
+          }
+          input{
+            padding: 0 6px;
+            &::placeholder{
+              font-size: $fs1;
+              color: $clr8;
+            }
+            &#pro_name{
+              width: 260px;
+            }
+            &#pro_qty{
+              width: 150px;
+              margin-left: auto;
+            }
+          }
+          select{
+            width: 90px;
+            margin-left: 20px;
+          }
+        }
+        .demand_btn{
+          background: $og1;
+          padding: 10px 26px;
+          color: $wt;
+        }
+      }
+      &:after{
+        @extend .abs;
+        content: '';
+        width: 260px;
+        height: $width;
+        background: $wt;
+        right: -17%;
+      }
+    }
+  }
+}
+
+.partner_box{
+  background: $wt;
+  padding: 3% 0;
+  .partner_inner_box{
+    @extend .rel;
+    .app-slide{
+      @extend .hide;
+      @extend .margin;
+      width: $wid1;
+    }
+  }
+  .swiper-wrapper{
+    @extend .wrap;
+  }
+  .iconfont{
+    @extend .abs;
+    @extend .flex;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    &:before{
+      font-size: $fs7;
+      color: $clr8;
+      font-weight: 400;
+      @extend .anim;
+    }
+    &.iconangle-left{
+      left: 0;
+    }
+    &.iconangle-right{
+      right: 0;
+    }
+    &[aria-disabled="true"]{
+      display: none;
+    }
+    &:hover{
+      &:before{
+        color: $bu1;
+      }
+    }
+  }
+  .swiper-pagination{
+    width: $width;
+    height: 4px;
+    margin-top: 16px;
+    span{
+      @extend .hei;
+      @extend .anim;
+      width: 24px;
+      background: $clr8;
+      margin: 0 4px;
+      &.swiper-pagination-bullet-active{
+        width: 50px;
+        background: $bu1;
+      }
+    }
+  }
+
+}
+
+.account_wish{
+  background: $bu1;
+  padding: 30px 0;
+  margin-bottom: 3%;
+  .aw_inner{
+    @extend .margin;
+    width: $wid2;
+    .aw_list{
+      flex: 1;
+      i.iconfont:before{
+        color: $wt;
+        font-size: $fs7;
+        margin-right: 10px;
+      }
+      h6,p{
+        font-size: $fs2;
+        color: $wt;
+      }
+      h6{
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      &:nth-child(2){
+        border-left: 1px solid $wt;
+        border-right: 1px solid $wt;
+      }
+    }
+  }
+}
+
+.footer{
+  .foot_list{
+    @extend .self;
+  }
+  h4{
+    @extend .ttu;
+    font-size: $fs3;
+    color: $clr6;
+    margin: 1rem 0;
+  }
+  a,p{
+    font-size: $fs2;
+    color: $clr7;
+    margin: 10px 0;
+  }
+  a{
+    @extend .anim;
+    justify-content: flex-start;
+    &:hover{
+      color: $bu1;
+    }
+  }
+  input,button{
+    @extend .rad1;
+  }
+  input{
+    width: $width;
+    display: block;
+    background: $wt;
+    line-height: 1.5rem;
+    padding: 6px;
+    margin-bottom: 10px;
+    &::placeholder{
+      color: $clr8;
+      font-size: $fs1;
+    }
+  }
+  button{
+    @extend .anim;
+    background: $clr3;
+    color: $wt;
+    font-weight: 600;
+    font-size: $fs2;
+    padding: 8px 26px;
+    &:hover{
+      background: $bu1;
+    }
+  }
+  .social_link{
+    @extend .flex-sb;
+    margin-top: 1rem;
+    width: $width;
+    i{
+      @extend .rad5;
+      @extend .flex;
+      @extend .anim;
+      width: 36px;
+      height: 36px;
+      border: 1px solid $clr7;
+      &:before{
+        @extend .anim;
+        font-size: $fs5;
+        color: $clr7;
+      }
+      &:hover{
+        border-color: $bu1;
+        &:before{
+          color: $bu1;
+        }
+      }
+    }
+  }
+}
+
+.copyright{
+  margin-top: 20px;
+  padding: 30px 0;
+  background: $wt;
+  li,a{
+    @extend .anim;
+    font-size: $fs1;
+    color: $clr7;
+  }
+  .link_cent{
+    margin: 0 20px;
+  }
+  a:hover{
+    color: $bu1;
+  }
+}
+
+
+/* products css */
+.pros_h4{
+  font-size: $fs6;
+  color: $clr3;
+  margin-bottom: 14px;
+}
+.pros_template{
+  background: $wt;
+  display: $flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  >a{
+    @extend .hide;
+    img{
+      @extend .anim;
+    }
+  }
+  .pros_template_infos{
+    width: $width;
+    p{
+      font-size: $fs2;
+      color: $clr8;
+      span{
+        margin-left: 4px;
+        color: lighten($clr8, 20%)
+      }
+    }
+    .pros_name{
+      @extend .fhd;
+      margin-bottom: 12px;
+    }
+    .pieces{
+      color: $clr7;
+    }
+  }
+  &:hover{
+    >a img{
+      transform: scale(1.1);
+    }
+  }
+}
+
+.road_nav{
+  justify-content: flex-start;
+  margin: $fs5 $auto;
+  a,span,i:before{
+    font-size: $fs;
+    color: $clr8;
+  }
+  i:before{
+    margin: 0 3px;
+  }
+  a{
+    @extend .anim;
+    &:hover{
+      color: $bu1;
+    }
+  }
+}
+
+.pros_menu{
+  .pros_menu_items,.pros_ban{
+    @extend .self;
+  }
+  .pros_menu_items{
+    display: $flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin-right: $fs5;
+    background: $wt;
+    padding: 10px 0;
+    outline: 1px solid $clr9;
+    h5,a{
+      width: $width;
+      padding: 8px 20px;
+    }
+    h5{
+      @extend .ttu;
+      font-weight: 600;
+      font-size: $fs;
+      color: $clr2;
+    }
+    a{
+      @extend .anim;
+      justify-content: flex-start;
+      color: $clr8;
+      &.pros_all{
+        color: $og1;
+        font-weight: 600;
+      }
+      &.pros_mn_list{
+        &:hover,&.active{
+          background: $bu1;
+          color: $wt;
+        }
+      }
+    }
+  }
+}
+
+.sel_pros{
+  margin: 3% $auto;
+  .sel_pro_items{
+    .sel_pros_list{
+      @extend .self;
+      width: $wid11;
+      display: $flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      .sel_pros_pic{
+        @extend .hide;
+        @extend .rad2;
+      }
+      .sel_pros_txt{
+        @extend .fhd1;
+        margin: 1rem 0;
+        font-weight: 600;
+        font-size: $fs2;
+        color: $clr3;
+      }
+    }
+  }
+}
+.weekly_deals{
+  margin-bottom: 3%;
+  .weekly_title{
+    margin-bottom: 14px;
+    h4{
+      margin-bottom: 0;
+    }
+    .week_link{
+      @extend .anim;
+      font-size: $fs2;
+      color: $clr8;
+      &:hover{
+        color: $bu1;
+      }
+    }
+  }
+  .week_items{
+    @extend .hide;
+    @extend .rad3;
+    li{
+      @extend .self;
+      &.week_list{
+        flex: 2;
+      }
+      &.recom_list{
+        flex: 1;
+        padding: 1rem;
+        a{
+          @extend .margin;
+          width: $wid3 + $wid14;
+        }
+        &:nth-child(-n+5):nth-child(n+2){
+          border-right: 1px solid $clr9;
+        }
+      }
+    }
+  }
+}
+.recommend{
+  margin-bottom: 3%;
+  .recom_items{
+    @extend .wrap;
+    margin-top: 20px;
+    justify-content: unset;
+    .recom_list{
+      @extend .hide;
+      @extend .rad3;
+      width: calc((100% - 60px) / 6);
+      margin-bottom: 12px;
+      a{
+        width: $width;
+      }
+      .pros_template_infos{
+        margin-top: 20px;
+        padding: 1rem;
+      }
+      &:not(:nth-child(6n)){
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+
+/* user info css*/
+.login_box{
+  width: $width;
+  .login_ban,.user_infos{
+    @extend .self;
+    width: $wid3;
+  }
+  .user_infos{
+    background: $wt;
+    .user_inner_box{
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: $wid12;
+      margin-top: $wid13;
+      .user_hd{
+        justify-content: flex-start;
+        margin-bottom: 20px;
+      }
+      
+    }
+    h4{
+      font-size: $fs5;
+      color: $clr3;
+      font-weight: 900;
+      margin-right: 40px;
+      padding: 10px 0;
+      cursor: pointer;
+      &.active{
+        color: $og1;
+      }
+    }
+    .user_form{
+      margin-bottom: 30px;
+      .input_label,button{
+        @extend .rad1;
+      }
+      .input_label{
+        @extend .flex-sb;
+        @extend .rad1;
+        border: 1px solid lighten($clr8, 10%);
+        height: 2.2rem;
+        margin-bottom: 10px;
+        input{
+          @extend .hei;
+          flex: 1;
+          &::placeholder{
+            color: lighten($clr8, 20%);
+          }
+        }
+        i.iconfont{
+          @extend .flex;
+          width: 2.2rem;
+          height: 2.2rem;
+          &:before{
+            font-size: $fs3;
+            color: $clr9;
+          }
+          &.iconsvg-13:before{
+            margin-top: -2px;
+          }
+          &.eyes:before{
+            color: $clr8;
+          }
+        }
+      }
+      button{
+        @extend .flex;
+        width: $width;
+        background: $og1;
+        color: $wt;
+        font-weight: 600;
+        font-size: $fs3;
+        padding: 8px 0;
+        margin-top: 30px;
+      }
+      .forget{
+        text-align: right;
+        margin-bottom: 6px;
+        i{
+          @extend .anim;
+          font-size: $fs1;
+          color: lighten($clr8, 20%);
+        }
+        &:hover{
+          i{
+            color: $og1;
+          }
+        }
+      }
+      .forget_txt{
+        font-size: $fs2;
+        color: lighten($clr8, 5%);
+        margin-bottom: 6px;
+      }
+      .close{
+        @extend .rad5;
+        @extend .flex;
+        @extend .margin;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,.2);
+        &:before{
+          font-size: $fs4;
+          color: $og1;
+        }
+      }
+      &.reg_form,&.forget_form{
+        display: none;
+      }
+    }
+    .other_login{
+      hr{
+        background: lighten($clr8, 30%);
+      }
+      .other_sign_in{
+        @extend .flex;
+        justify-content: flex-start;
+        margin-top: 1rem;
+        span{
+          font-size: $fs2;
+          color: lighten($clr8, 10%);
+          margin-right: 14px;
+        }
+        a{
+          margin: 0 8px;
+          &.wc{
+            margin: 0 6px;
+          }
+        }
+        svg{
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+

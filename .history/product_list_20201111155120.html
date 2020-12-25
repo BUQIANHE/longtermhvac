@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POST BUYING</title>
+  <!--  css link-->
+  <link rel="stylesheet" href="css/main.min.css">
+
+  <!--  js link-->
+  <script src="js/jquery-1.9.12.min.js"></script>
+  <script src="js/jquery.bxslider.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/other.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+
+</head>
+<body>
+  <!--  header -->
+  <header class="hd">
+    <div class="inner_hd hei">
+      <div class="pc_nav_box hei" v-if="screenWidth >= 767">
+        <ul class="top_nav flex-sb wid">
+          <li class="top_nav_list list_logo">
+            <a href="index.html" class="logo"><img src="assets/images/logo.jpg" alt="logo"></a>
+          </li>
+          <li class="topp_nav_list list_form">
+            <form action="" class="flex-sb">
+              <input type="text" placeholder="What are you looking for..." name="keys" id="search_key">
+              <button class="search_ico"><i class="iconfont iconsearch"></i></button>
+            </form>
+          </li>
+          <li class="top_nav_list flex-sb list_items">
+            <a href="login.html" class="ico_list"><i class="iconfont iconsvg-13"></i><span class="icon_txt">Login</span></a>
+            <a href="ike.html" class="ico_list"><i class="iconfont iconheart-o"></i><span class="icon_txt">Wish list</span></a>
+            <a href="cart.html" class="ico_list"><i class="iconfont iconcart"></i><span class="icon_txt">Cart</span></a>
+          </li>
+          <li class="top_nav_list mob_ico"><i class="iconfont icon-menu"></i></li>
+        </ul>
+        <ul class="top_nemu flex-sb wid">
+          <li class="top_menu_list flex-sb cate_items">
+            <i class="iconfont iconcaidan"></i>
+            <a class="cate">Categories</a>
+            <i class="iconfont iconangle-down"></i>
+            <ul class="cls_items">
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Refrigeration Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Air Conditioner</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Ventilation System</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Heating Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Assembly Supplies</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Tools and Equipment</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Miscellaneous</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">All Categories</a>
+                <div class="pro_cls_dp">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="top_menu_list flex-sb inner_pg">
+            <a href="" class="list_pg">Buying on Unitecool</a>
+            <a href="" class="list_pg">Sell on Unitecool</a>
+            <a href="" class="list_pg">News & Events</a>
+            <a href="" class="list_pg">Help Center</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mobile_nav_box" v-cloak v-else>
+        <ul class="mob_nav_items flex-sb hei wid">
+          <li class="mob_nav_list flex hei categories">
+            <i class="iconfont iconmenu"></i>
+            <!-- <a class="mob_nav_txt">Categories</a> -->
+
+            <ul class="cls_items">
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Refrigeration Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Air Conditioner</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central</a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Ventilation System</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Heating Equipment</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Assembly Supplies</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Tools and Equipment</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">Miscellaneous</a>
+              </li>
+              <li class="ml_list pro_cls_items">
+                <a href="" class="cls_txt">All Categories</a>
+                <div class="pro_cls_dp" v-if="screenWidth >= 767">
+                  <a href="">Central        </a>
+                  <a href="">Air-conditionerResidential</a>
+                  <a href="">Air-conditionerCommercial</a>
+                  <a href="">Air-conditionerInverter</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                  <a href="">Air-conditionerComputer</a>
+                  <a href="">Room Air ConditioningSpecial</a>
+                  <a href="">Air-conditionerClean</a>
+                  <a href="">Air-conditionerThermostatic</a>
+                  <a href="">Conditioner Parts</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="mob_nav_list list_logo hei">
+            <a href="index.html" class="logo flex"><img src="assets/images/logo.jpg" alt="logo"></a>
+          </li>
+          <li class="mob_nav_list flex hei page_menu">
+            <!-- <a class="mob_nav_txt">Menu</a> -->
+            <i class="iconfont iconmenu1"></i>
+
+            <ul class="page_items cls_items">
+              <li class="user_cart list_items flex-sb">
+                <a href="login.html" class="ico_list"><i class="iconfont iconsvg-13"></i><span class="icon_txt">Login</span></a>
+                <a href="ike.html" class="ico_list"><i class="iconfont iconheart-o"></i><span class="icon_txt">Wish list</span></a>
+                <a href="cart.html" class="ico_list"><i class="iconfont iconcart"></i><span class="icon_txt">Cart</span></a>
+              </li>
+              <li class="page_list inner_pg">
+                <a href="" class="list_pg">Buying on Unitecool</a>
+                <a href="" class="list_pg">Sell on Unitecool</a>
+                <a href="" class="list_pg">News & Events</a>
+                <a href="" class="list_pg">Help Center</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+  
+        <div class="mob_search list_form hei wid">
+          <form action="" class="flex-sb">
+            <input type="text" placeholder="What are you looking for..." name="keys" id="search_key">
+            <button class="search_ico"><i class="iconfont iconsearch"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- road nav -->
+  <div class="road_nav flex wid">
+    <a href="" class="home">Home</a>
+    <i class="iconfont iconangle-right"></i>
+    <span class="road_txt">Contact Long Term</span>
+  </div>
+
+  <section class="sel_products wid flex-sb">
+    <aside class="prolist_aside">
+      <div class="aside_cate_items">
+        <h4>Categories</h4>
+        <ul class="categories_items">
+          <li class="categories_list"><a href="">Air Conditioner</a></li>
+          <li class="categories_list"><a href="">Refrigeration Equipment</a></li>
+          <li class="categories_list"><a href="">Refrigeration iltings</a></li>
+          <li class="categories_list"><a href="">CONDENSATE PUMP</a></li>
+          <li class="categories_list"><a href="">Ventilation & Air Treatmen</a></li>
+          <li class="categories_list"><a href="">Refrigeration Tools</a></li>
+          <li class="categories_list"><a href="">Materials</a></li>
+          <li class="categories_list"><a href="">Intelligent Control</a></li>
+          <li class="categories_list"><a href="">Heating</a></li>
+          <li class="categories_list"><a href="">Water System</a></li>
+          <li class="categories_list"><a href="">Others</a></li>  
+          <li class="categories_list"><a href="">[View More >]</a></li>
+        </ul>
+      </div>
+      <div class="aside_brand_items">
+        <h4>Brand</h4>
+        <ul class="categories_items">
+          <li class="categories_list"><a href="">Copeland Scrolll</a></li>
+          <li class="categories_list"><a href="">LG</a></li>
+          <li class="categories_list"><a href="">Boyard</a></li>
+          <li class="categories_list"><a href="">GMCC</a></li>
+          <li class="categories_list"><a href="">Hitachi</a></li>
+          <li class="categories_list"><a href="">Panasonic</a></li>
+          <li class="categories_list"><a href="">Embraco</a></li>
+          <li class="categories_list"><a href="">Secoop</a></li>
+          <li class="categories_list"><a href="">Cubigel</a></li>
+        </ul>
+      </div>
+    </aside>
+    <!-- <hr> -->
+    <main class="products_list_box">
+      <div class="pros_list_hd flex">
+        <p class="sort flex">
+          <span>Sort by:</span>
+          <a href="" class="iconfont iconlong-arrow-down">Release Time</a>
+        </p>
+        <p class="view_as flex">
+          <span>View as: </span>
+          <a class="iconfont iconsvg-11 current"></a>
+          <a class="iconfont iconsvg-10"></a>
+        </p>
+      </div>
+      <ul class="main_pros_items ">
+        <li class="main_pros_list flex-sb">
+          <a href="" class="main_pros_pic"><img src="assets/images/pros_list.jpg" alt=""></a>
+          <hr>
+          <div class="main_pros_infos">
+            <h3 class="pros_name">AC Compressor</h3>
+            <div class="pros_parameter">
+              <p>Products Model: <span>LT-NE6152E</span></p>
+              <p>Min.Order Quantity: <span>500 Piece</span></p>
+              <p>Supply Ability: <span>100000 Piece per Month</span></p>
+              <p>Port: <span>NINGBO</span></p>
+              <p>Place of Origin: <span>China</span></p>
+              <p>Payment Terms: <span>T/T, Western Union, PayPal</span></p>
+              <p>Brand: <span>Sinocool</span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="main_pros_btns">
+            <a href="" class="add_cart">
+              <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" class="icon">
+                <path d="M819.83 683.47h-50.69c-9.34 0-16.92-7.57-16.92-16.92s7.57-16.92 16.92-16.92h48.78c0.1-0.85 0.27-1.69 0.5-2.52l79.08-283.16H250.33l88.39 282.38c0.53 1.5 0.96 2.55 1.3 3.29h220.37c9.34 0 16.92 7.57 16.92 16.92s-7.57 16.92-16.92 16.92H337.54c-21.72 0-28.6-19.74-30.86-26.23-0.06-0.17-0.12-0.34-0.17-0.51l-90.69-289.74c-0.51-1.64-0.77-3.34-0.77-5.05 0-17.53 14.26-31.8 31.8-31.8h653.9c17.53 0 31.8 14.26 31.8 31.8 0 1.54-0.21 3.07-0.62 4.55L851.51 654.4c-1.39 16.26-15.07 29.07-31.68 29.07z" fill="#333333" p-id="1007"></path> 
+                <path d="M666.93 683.47h-58.85c-9.34 0-16.92-7.57-16.92-16.92s7.57-16.92 16.92-16.92h58.85c9.34 0 16.92 7.57 16.92 16.92s-7.58 16.92-16.92 16.92zM328.96 679.59c-7.15 0-13.79-4.57-16.1-11.74L157.17 184.28h-42.24c-9.34 0-16.92-7.57-16.92-16.92 0-9.34 7.57-16.92 16.92-16.92h54.57c7.35 0 13.85 4.74 16.1 11.73l159.47 495.31c2.86 8.89-2.02 18.42-10.92 21.29-1.73 0.56-3.47 0.82-5.19 0.82zM438 889.5c-43.18 0-78.31-35.13-78.31-78.31s35.13-78.31 78.31-78.31 78.31 35.13 78.31 78.31c-0.01 43.18-35.13 78.31-78.31 78.31z m0-122.78c-24.52 0-44.48 19.95-44.48 44.47s19.95 44.48 44.48 44.48 44.47-19.95 44.47-44.48-19.95-44.47-44.47-44.47zM726.34 889.5c-43.18 0-78.31-35.13-78.31-78.31s35.13-78.31 78.31-78.31 78.31 35.13 78.31 78.31-35.13 78.31-78.31 78.31z m0-122.78c-24.52 0-44.47 19.95-44.47 44.47s19.95 44.48 44.47 44.48 44.48-19.95 44.48-44.48-19.95-44.47-44.48-44.47z" fill="#333333" p-id="1008"></path>
+              </svg>
+              <span>Add to Shopping Cart</span>
+            </a>
+            <a href="" class="to_chat">
+              <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2617" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px">
+                <path d="M896 685.408V192a32 32 0 0 0-32-32H160c-17.632 0-32 14.336-32 32v668.064l145.984-126.944a64.192 64.192 0 0 1 41.984-15.712H864a32 32 0 0 0 32-32zM864 96c52.928 0 96 43.072 96 96v493.408c0 52.928-43.072 96-96 96H315.968l-145.952 126.944a63.552 63.552 0 0 1-46.464 15.552A64.096 64.096 0 0 1 64 860.064V192c0-52.928 43.072-96 96-96h704z m-204.576 252.576a32 32 0 1 1 0 64H333.696a32 32 0 0 1 0-64h325.76z m-131.776 148.576a32 32 0 1 1 0 64h-193.92a32 32 0 0 1 0-64h193.92z" p-id="2618"></path>
+              </svg>
+              <span>To chat with</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </main>
+  </section>
+
+
+
+
+  <section class="account_wish">
+    <ul class="aw_items wid">
+      <div class="aw_inner flex-sb">
+        <li class="aw_list flex">
+          <i class="iconfont iconsvg-12"></i>
+          <div class="ico_info">
+            <h6>Help Center</h6>
+            <p>Ask questions & get instant answers</p>
+          </div>
+        </li>
+        <li class="aw_list flex">
+          <i class="iconfont iconsvg-13"></i>
+          <div class="ico_info">
+            <h6>My Account</h6>
+            <p>Manage your information & settings</p>
+          </div>
+        </li>
+        <li class="aw_list flex">
+          <i class="iconfont iconheart-o"></i>
+          <div class="ico_info">
+            <h6>Wish List</h6>
+            <p>Tell everyone what you want</p>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </section>
+
+  <footer class="footer">
+    <ul class="footer_items flex-sb wid">
+      <li class="foot_list">
+        <h4 class="foot_tit">NEWSLETTER</h4>
+        <p>Join beiduo lovers and get our latest parts <br>& resources sent right to your inbox. </p>
+        <form action="">
+          <input type="text" name="newsletter_name"  placeholder="Your name">
+          <input type="text" name="newsletter_email" placeholder="Your email">
+          <button class="newsletter_btn">SUBMIT</button>
+        </form>
+        <div class="social_link">
+          <a href=""><i class="iconfont iconfacebook"></i></a>
+          <a href=""><i class="iconfont icontwitter"></i></a>
+          <a href=""><i class="iconfont iconlinkedin-square"></i></a>
+          <a href=""><i class="iconfont iconinstagram"></i></a>
+          <a href=""><i class="iconfont iconpinterest-p"></i></a>
+        </div>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">Buying on Unitecool</h4>
+        <a href="">Post Buying Leads</a>
+        <a href="">For Buyers</a>
+        <a href="">New Users</a>
+        <a href="">Feedback</a>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">ABOUT UNITECOOL</h4>
+        <a href="">News & Events</a>
+        <a href="">About Unitecool</a>
+        <a href="">Contact Unitecool</a>
+        <a href="">Sitemap</a>
+      </li>
+      <li class="foot_list">
+        <h4 class="foot_tit">Help Center</h4>
+        <a href="">Instructions </a>
+        <a href="">Rules & Policies</a>
+        <a href="">Guide</a>
+        <a href="">Activity</a>
+      </li>
+    </ul>
+  </footer>
+
+  <div class="copyright">
+    <ul class="cpy_items flex-sb wid">
+      <li class="cpy_list cpy_txt">Copyright © 2003-2020 UNITECOOL All rights reserved.</li>
+      <li class="cpy_list flex-sb">
+        <a href="">Privacy Policy</a>
+        <a href="" class="link_cent">Secure Shopping</a>
+        <a href="">XML</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+
+    /* ============= vue js ============= */
+    // header js
+    const mv = new Vue({
+
+      el: '.hd',
+
+      data: {
+        
+        screenWidth: document.body.clientWidth,
+
+      }
+
+    })
+  </script>
+
+</body>
+</html>
